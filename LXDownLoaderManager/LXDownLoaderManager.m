@@ -14,11 +14,12 @@
 
 @property (nonatomic, strong) NSMutableDictionary *downLoads;
 
-@property (nonatomic, assign) dispatch_semaphore_t semaphore;
-
 @end
 
 @implementation LXDownLoaderManager
+{
+    dispatch_semaphore_t _semaphore;
+}
 static LXDownLoaderManager *_shareInstance;
 + (instancetype)shareInstance {
     if (_shareInstance == nil) {
@@ -53,7 +54,7 @@ static LXDownLoaderManager *_shareInstance;
 }
 
 -(void)setMaxConcurrentCount:(int)count {
-    self.semaphore = dispatch_semaphore_create(count);
+    _semaphore = dispatch_semaphore_create(count);
 }
 
 
@@ -63,7 +64,7 @@ static LXDownLoaderManager *_shareInstance;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __strong typeof(self) strongSelf = weakSelf;
 
-        dispatch_semaphore_wait(strongSelf.semaphore, DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(strongSelf->_semaphore, DISPATCH_TIME_FOREVER);
         NSString *urlMD5 = [url.absoluteString md5];
         //查找相应的下载器
         LXDownLoader *downLoader = self.downLoads[urlMD5];
@@ -78,7 +79,7 @@ static LXDownLoaderManager *_shareInstance;
         [downLoader downLoader:url downLoadInfo:downLoadInfo stateChange:stateChange progress:progressBlock success:^(NSString * _Nonnull filePath) {
             __strong typeof(self) strongSelf = weakSelf;
             [strongSelf.downLoads removeObjectForKey:urlMD5];
-            dispatch_semaphore_signal(strongSelf.semaphore);
+            dispatch_semaphore_signal(strongSelf->_semaphore);
             if (successBlock) {
                  successBlock(filePath);
             }
