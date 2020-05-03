@@ -1,0 +1,6 @@
+framework module Pods_LXDownLoaderModule {
+  umbrella header "Pods-LXDownLoaderModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

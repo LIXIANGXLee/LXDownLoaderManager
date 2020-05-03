@@ -1,0 +1,16 @@
+PODS:
+  - LXDownLoaderManager (1.0.0)
+
+DEPENDENCIES:
+  - LXDownLoaderManager (from `./`)
+
+EXTERNAL SOURCES:
+  LXDownLoaderManager:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  LXDownLoaderManager: 214e57a4993a28887a75c2b0746aad5188a085ec
+
+PODFILE CHECKSUM: 1743fe1742cbf4f41014b4a40f1f3bfa9ac77e9f
+
+COCOAPODS: 1.9.1

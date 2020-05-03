@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		0456C3B7245E9D51008D163D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0456C3B6245E9D51008D163D /* Assets.xcassets */; };
 		0456C3BA245E9D51008D163D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0456C3B8245E9D51008D163D /* LaunchScreen.storyboard */; };
 		0456C3BD245E9D51008D163D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456C3BC245E9D51008D163D /* main.m */; };
+		0456C3D4245EBD82008D163D /* LXDownLoaderManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0456C3D3245EBD82008D163D /* LXDownLoaderManager.podspec */; };
+		2E182900B822FF7BB591787C /* Pods_LXDownLoaderModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD2EFD686279EC8CA53375C /* Pods_LXDownLoaderModule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		0456C3B9245E9D51008D163D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0456C3BB245E9D51008D163D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0456C3BC245E9D51008D163D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0456C3D3245EBD82008D163D /* LXDownLoaderManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LXDownLoaderManager.podspec; sourceTree = "<group>"; };
+		69B249296A003890A6BD4BAE /* Pods-LXDownLoaderModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXDownLoaderModule.release.xcconfig"; path = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule.release.xcconfig"; sourceTree = "<group>"; };
+		6CD2EFD686279EC8CA53375C /* Pods_LXDownLoaderModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LXDownLoaderModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		707D80F28644AD998221901D /* Pods-LXDownLoaderModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXDownLoaderModule.debug.xcconfig"; path = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E182900B822FF7BB591787C /* Pods_LXDownLoaderModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +52,11 @@
 		0456C39E245E9D4E008D163D = {
 			isa = PBXGroup;
 			children = (
+				0456C3D3245EBD82008D163D /* LXDownLoaderManager.podspec */,
 				0456C3A9245E9D4E008D163D /* LXDownLoaderModule */,
 				0456C3A8245E9D4E008D163D /* Products */,
+				B77A4B8049FBF723F821C12A /* Pods */,
+				235C8D2E0C89564498EB84EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +86,23 @@
 			path = LXDownLoaderModule;
 			sourceTree = "<group>";
 		};
+		235C8D2E0C89564498EB84EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CD2EFD686279EC8CA53375C /* Pods_LXDownLoaderModule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B77A4B8049FBF723F821C12A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				707D80F28644AD998221901D /* Pods-LXDownLoaderModule.debug.xcconfig */,
+				69B249296A003890A6BD4BAE /* Pods-LXDownLoaderModule.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0456C3C0245E9D51008D163D /* Build configuration list for PBXNativeTarget "LXDownLoaderModule" */;
 			buildPhases = (
+				8B12203AB1EC1352980652E2 /* [CP] Check Pods Manifest.lock */,
 				0456C3A3245E9D4E008D163D /* Sources */,
 				0456C3A4245E9D4E008D163D /* Frameworks */,
 				0456C3A5245E9D4E008D163D /* Resources */,
+				393DBE1566FBE0D7CAC6569E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,12 +163,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				0456C3BA245E9D51008D163D /* LaunchScreen.storyboard in Resources */,
+				0456C3D4245EBD82008D163D /* LXDownLoaderManager.podspec in Resources */,
 				0456C3B7245E9D51008D163D /* Assets.xcassets in Resources */,
 				0456C3B5245E9D4E008D163D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		393DBE1566FBE0D7CAC6569E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B12203AB1EC1352980652E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LXDownLoaderModule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0456C3A3245E9D4E008D163D /* Sources */ = {
@@ -287,6 +359,7 @@
 		};
 		0456C3C1245E9D51008D163D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 707D80F28644AD998221901D /* Pods-LXDownLoaderModule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +377,7 @@
 		};
 		0456C3C2245E9D51008D163D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69B249296A003890A6BD4BAE /* Pods-LXDownLoaderModule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
