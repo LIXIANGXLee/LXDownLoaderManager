@@ -17,15 +17,15 @@
     long long _totalSize;
 }
 /** 下载会话 */
-@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong)NSURLSession *session;
 /** 下载完成路径 */
-@property (nonatomic, copy) NSString *downLoadedPath;
+@property (nonatomic, copy)NSString *downLoadedPath;
 /** 下载临时路径 */
-@property (nonatomic, copy) NSString *downLoadingPath;
+@property (nonatomic, copy)NSString *downLoadingPath;
 /** 文件输出流 */
-@property (nonatomic, strong) NSOutputStream *outputStream;
+@property (nonatomic, strong)NSOutputStream *outputStream;
 /** 当前下载任务 */
-@property (nonatomic, weak) NSURLSessionDataTask *dataTask;
+@property (nonatomic, weak)NSURLSessionDataTask *dataTask;
 
 @end
 
@@ -182,23 +182,26 @@
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     
     if (error == nil) {
-        [LXFileManager moveFile:self.downLoadingPath toPath:self.downLoadedPath];
-        self.state = LXDownLoadStateSuccess;
-        
+        // 下载完成 但不一定下载成功 只有临时文件和资源文件大小相等 才算成功
+        if ([LXFileManager fileSize:self.downLoadingPath] == _tmpSize) {
+            [LXFileManager moveFile:self.downLoadingPath toPath:self.downLoadedPath];
+            self.state = LXDownLoadStateSuccess;
+        }else {  // 失败
+            self.state = LXDownLoadStateFailed;
+            [LXFileManager removeFile:self.downLoadingPath];
+        }
     }else {
         // 取消,  断网
         if (error.code == -999) {
             self.state = LXDownLoadStatePause;
         }else {
             self.state = LXDownLoadStateFailed;
-            
             if (self.faildBlock) {
                 self.faildBlock(error);
             }
         }
     }
     [self.outputStream close];
-    
 }
 
 

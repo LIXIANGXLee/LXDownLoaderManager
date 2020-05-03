@@ -72,8 +72,8 @@ typedef void(^LXStateChangeBlock)(LXDownLoadState state);
 /**
  事件&数据
  */
-@property (nonatomic, assign, readonly) LXDownLoadState state;
-@property (nonatomic, assign, readonly) float progress;
+@property (nonatomic, assign, readonly)LXDownLoadState state;
+@property (nonatomic, assign, readonly)float progress;
 
 /**
  事件回调

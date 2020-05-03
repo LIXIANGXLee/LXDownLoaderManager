@@ -12,7 +12,7 @@
 
 @interface LXDownLoaderManager()<NSCopying, NSMutableCopying>
 
-@property (nonatomic, strong) NSMutableDictionary *downLoads;
+@property (nonatomic, strong)NSMutableDictionary *downLoads;
 
 @end
 
