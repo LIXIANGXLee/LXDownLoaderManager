@@ -10,6 +10,13 @@
 
 @implementation LXFileManager
 
++(NSString *)cachePath:(NSURL *)url {
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:url.lastPathComponent];
+}
+
++(NSString *)tmpPath:(NSURL *)url {
+    return [NSTemporaryDirectory() stringByAppendingPathComponent:url.lastPathComponent];
+}
 
 + (BOOL)fileExists:(NSString *)filePath {
     if (filePath.length == 0) {

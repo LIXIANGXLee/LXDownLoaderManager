@@ -10,13 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**沙盒路径 */
-#define kCachePath NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
-
-/**临时路径 */
-#define kTmpPath NSTemporaryDirectory()
-
 @interface LXFileManager : NSObject
+
+/**
+根据url获取沙盒路径（fileName）
+
+@param url 文件路径
+*/
++(NSString *)cachePath:(NSURL *)url;
+
+/**
+根据url获取临时路径（fileName）
+
+@param url 文件路径
+*/
++(NSString *)tmpPath:(NSURL *)url;
 
 /**
  文件是否存在
@@ -25,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return 是否存在
  */
 + (BOOL)fileExists:(NSString *)filePath;
+
 
 /**
  文件大小

@@ -19,7 +19,6 @@
         [result appendFormat:@"%02x", md[i]];
     }
     return result;
-    
 }
 
 @end

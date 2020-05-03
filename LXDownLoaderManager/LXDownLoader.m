@@ -62,9 +62,9 @@
     
    // 下载前 先取消上次下载（处理异常判断）
     [self cancel];
-    NSString *fileName = url.lastPathComponent;
-    self.downLoadedPath = [kCachePath stringByAppendingPathComponent:fileName];
-    self.downLoadingPath = [kTmpPath stringByAppendingPathComponent:fileName];
+
+    self.downLoadedPath = [LXFileManager cachePath:url];
+    self.downLoadingPath = [LXFileManager tmpPath:url];
     
     if ([LXFileManager fileExists:self.downLoadedPath]) {
         self.state = LXDownLoadStateSuccess;
