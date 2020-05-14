@@ -255,6 +255,7 @@
     }
 }
 
+/// 进度监听
 - (void)setProgress:(float)progress {
     _progress = progress;
     if (self.progressChange) {

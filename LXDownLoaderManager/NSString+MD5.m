@@ -10,6 +10,7 @@
 
 @implementation NSString (MD5)
 
+/// md5转换
 - (NSString *)md5 {
     const char *data = self.UTF8String;
     unsigned char md[CC_MD5_DIGEST_LENGTH];

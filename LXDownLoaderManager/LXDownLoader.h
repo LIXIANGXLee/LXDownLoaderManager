@@ -42,6 +42,7 @@ typedef void(^LXStateChangeBlock)(LXDownLoadState state);
  @param failedBlock 下载失败回调
  */
 - (void)downLoader:(NSURL *)url downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo stateChange:(LXStateChangeBlock)stateChange progress:(LXProgressBlock)progressBlock  success:(LXSuccessBlock)successBlock failed:(LXFailedBlock)failedBlock;
+
 /**
  根据URL地址下载资源（下载或者继续下载）需要自己设置回调
  @param url 资源路径
@@ -76,7 +77,7 @@ typedef void(^LXStateChangeBlock)(LXDownLoadState state);
 @property (nonatomic, assign, readonly)float progress;
 
 /**
- 事件回调
+ 事件监听回调
  */
 @property (nonatomic, copy)LXDownLoadInfoBlock downLoadInfo;
 @property (nonatomic, copy)LXStateChangeBlock stateChange;
