@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E29397A5647558FD58C0C7B0A3DCA1 /* LXDownLoaderManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15ABF86C57637993E8C6F057AA9BDD0B /* LXDownLoaderManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C26369F176A209937C7AE2CB52BF69B /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = BEE99D7D534521BA47F3ADC4421CAB01 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C97F21D14399C5BFB391F061C771401 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		556E02EB138EC2803497630790BCC3AB /* LXDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A98BD0C3F72BE87E3877933960F4942E /* LXDownLoader.m */; };
-		70FE317162C4CC4BCD361FA444BD305C /* Pods-LXDownLoaderModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2743FE567581ED62AFEDCF0AB319486 /* Pods-LXDownLoaderModule-dummy.m */; };
-		7E18BB33CDC8D43B784CBAACA0FF8DFC /* LXFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6913709058E73E4E8162F5A81BBD253 /* LXFileManager.m */; };
-		83C98653EC8114119375925D7DB7679D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		A0512964B8DDA70D6F116A03462CC2CA /* LXDownLoaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A09B534E4AEEC3F306953B0F828603E /* LXDownLoaderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4FFD0B5CD0BF786F7F2DDA8254C2B03 /* LXDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B7040032C74C682D7AC84879E3CEA7 /* LXDownLoaderManager.m */; };
-		C3A0A5A2ED7D48A8C7B8F9A3B1059944 /* LXDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B9D1582396AC1258298C52A7A699F779 /* LXDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E77D4F7B2FA623876E4E77A7FEF8F093 /* LXDownLoaderManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D978C046CB08DEBB12EF843FFB03E77F /* LXDownLoaderManager-dummy.m */; };
-		EC73914AF3DA9864366D33C6B2612C8E /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE903CD80FE4F460CEBEC8DA068EF54 /* NSString+MD5.m */; };
-		F44DB0C39220F011368D3C3826E54710 /* Pods-LXDownLoaderModule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C561B219EDA5AD3205C3D886063A127D /* Pods-LXDownLoaderModule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9570274EAF7C73CAEF6900AB24FE9F2 /* LXFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B4025C537273B9F30CD0416EA8991AF9 /* LXFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CCD706DE72261FF4A9FB9BC2A2877B1 /* LXDownLoaderManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFEB3E8680415A548825D5795E828D /* LXDownLoaderManager-dummy.m */; };
+		10515D3CADEE23D8ED0096673B62CC9C /* LXDownLoaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF3315DF2C8CF6FCB2428C5B83A57F2 /* LXDownLoaderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40E22299AA907C8DD1B205D7459EA369 /* LXDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E68CD8086EFCB3D72441FC81D020948 /* LXDownLoader.m */; };
+		4FE99EACBA735DFEC24D26EE897AAB60 /* LXDownLoaderManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3D74B69CF8B795714661A153FB10498 /* LXDownLoaderManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5264FB19A62C8AD5EA4D3870236165DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5DC3CB3C5338DA10567E95C3020BA9D7 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95CCB57ED8258CD1A1B06CA86C317219 /* Pods-LXDownLoaderModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2743FE567581ED62AFEDCF0AB319486 /* Pods-LXDownLoaderModule-dummy.m */; };
+		A0E0869EB7BE066DF1A03902AE46F478 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A29562C53249C6FB678A6ABBBD7D5D76 /* LXLoaderFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 92329820D2329D1F2839393A83DAB71C /* LXLoaderFile.m */; };
+		AA6626032F102AEC1C4E8EBF65D4C331 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E9B8C3A9741CBF4B84213655D260 /* NSString+MD5.m */; };
+		EE3D9EA552F46FB599A6795639481943 /* Pods-LXDownLoaderModule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C561B219EDA5AD3205C3D886063A127D /* Pods-LXDownLoaderModule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0FE2937CB7732240F0E4D74FCE59F5F /* LXLoaderFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F25991D750989F2450F7FAB0A0CD04B3 /* LXDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF7DEBB9D4D6A02D9A110052462E743 /* LXDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE4FD6D3E220093D8231601DB856DFB2 /* LXDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A300BC9D97898614C2A0A455AD97EE28 /* LXDownLoaderManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC942E34DF6F80BB2B30BD16AE83CE0B /* PBXContainerItemProxy */ = {
+		8969328BD3838A06DA9DFEE969C2E804 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -34,51 +34,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15ABF86C57637993E8C6F057AA9BDD0B /* LXDownLoaderManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXDownLoaderManager-umbrella.h"; sourceTree = "<group>"; };
+		0E68CD8086EFCB3D72441FC81D020948 /* LXDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXDownLoader.m; path = LXDownLoaderManager/LXDownLoader.m; sourceTree = "<group>"; };
+		0F28E9B8C3A9741CBF4B84213655D260 /* NSString+MD5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "LXDownLoaderManager/NSString+MD5.m"; sourceTree = "<group>"; };
+		10A73F89DF13004E4759C2CBE098E24E /* LXDownLoaderManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXDownLoaderManager.modulemap; sourceTree = "<group>"; };
+		15EFEB3E8680415A548825D5795E828D /* LXDownLoaderManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXDownLoaderManager-dummy.m"; sourceTree = "<group>"; };
+		20E694D6F12908D4F6B2068273A45AF4 /* LXDownLoaderManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXDownLoaderManager.release.xcconfig; sourceTree = "<group>"; };
 		29D92C1CE0BFEE439D16FCE3CB33160A /* Pods-LXDownLoaderModule-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXDownLoaderModule-Info.plist"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4280E8165AF0B1C5A65D4E6C73D69A5E /* LXDownLoaderManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXDownLoaderManager-prefix.pch"; sourceTree = "<group>"; };
+		3CF3315DF2C8CF6FCB2428C5B83A57F2 /* LXDownLoaderManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXDownLoaderManager.h; path = LXDownLoaderManager/LXDownLoaderManager.h; sourceTree = "<group>"; };
+		4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "LXDownLoaderManager/NSString+MD5.h"; sourceTree = "<group>"; };
+		4AF7DEBB9D4D6A02D9A110052462E743 /* LXDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXDownLoader.h; path = LXDownLoaderManager/LXDownLoader.h; sourceTree = "<group>"; };
 		4FF34C956B3FF55F2E54F3CC0F1A8042 /* Pods_LXDownLoaderModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXDownLoaderModule.framework; path = "Pods-LXDownLoaderModule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		513383252DA9852342DC10717D02D97D /* Pods-LXDownLoaderModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXDownLoaderModule.release.xcconfig"; sourceTree = "<group>"; };
-		607B096145B84DFA7A0D89ED14ECA949 /* LXDownLoaderManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXDownLoaderManager.modulemap; sourceTree = "<group>"; };
-		6DE903CD80FE4F460CEBEC8DA068EF54 /* NSString+MD5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "LXDownLoaderManager/NSString+MD5.m"; sourceTree = "<group>"; };
+		5F154485F1AEF18E71DF9C3E2DC7AC4B /* LXDownLoaderManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LXDownLoaderManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		815D5049569A29145A5B459E01BD2479 /* Pods-LXDownLoaderModule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXDownLoaderModule.modulemap"; sourceTree = "<group>"; };
-		8A09B534E4AEEC3F306953B0F828603E /* LXDownLoaderManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXDownLoaderManager.h; path = LXDownLoaderManager/LXDownLoaderManager.h; sourceTree = "<group>"; };
-		8E041568AF5A3377230862F0FE7A74A3 /* LXDownLoaderManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXDownLoaderManager.release.xcconfig; sourceTree = "<group>"; };
+		92329820D2329D1F2839393A83DAB71C /* LXLoaderFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXLoaderFile.m; path = LXDownLoaderManager/LXLoaderFile.m; sourceTree = "<group>"; };
 		9312BF2F391AD5BFEEA2F38C059ECE1D /* LXDownLoaderManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXDownLoaderManager.framework; path = LXDownLoaderManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXLoaderFile.h; path = LXDownLoaderManager/LXLoaderFile.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A98BD0C3F72BE87E3877933960F4942E /* LXDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXDownLoader.m; path = LXDownLoaderManager/LXDownLoader.m; sourceTree = "<group>"; };
+		A1F4F68C79BCD816EE6BA127DF0F1CE4 /* LXDownLoaderManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXDownLoaderManager-Info.plist"; sourceTree = "<group>"; };
+		A300BC9D97898614C2A0A455AD97EE28 /* LXDownLoaderManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXDownLoaderManager.m; path = LXDownLoaderManager/LXDownLoaderManager.m; sourceTree = "<group>"; };
 		B144D080C997ED080A9CF8B5E04F8F1F /* Pods-LXDownLoaderModule-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXDownLoaderModule-frameworks.sh"; sourceTree = "<group>"; };
-		B4025C537273B9F30CD0416EA8991AF9 /* LXFileManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXFileManager.h; path = LXDownLoaderManager/LXFileManager.h; sourceTree = "<group>"; };
-		B9D1582396AC1258298C52A7A699F779 /* LXDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXDownLoader.h; path = LXDownLoaderManager/LXDownLoader.h; sourceTree = "<group>"; };
-		BEE99D7D534521BA47F3ADC4421CAB01 /* NSString+MD5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "LXDownLoaderManager/NSString+MD5.h"; sourceTree = "<group>"; };
 		C1C0112DFD3EF6ABDD26BAA60786A1BB /* Pods-LXDownLoaderModule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXDownLoaderModule-acknowledgements.plist"; sourceTree = "<group>"; };
+		C3D74B69CF8B795714661A153FB10498 /* LXDownLoaderManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXDownLoaderManager-umbrella.h"; sourceTree = "<group>"; };
 		C561B219EDA5AD3205C3D886063A127D /* Pods-LXDownLoaderModule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXDownLoaderModule-umbrella.h"; sourceTree = "<group>"; };
-		C6913709058E73E4E8162F5A81BBD253 /* LXFileManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXFileManager.m; path = LXDownLoaderManager/LXFileManager.m; sourceTree = "<group>"; };
+		CA30AE5480CEB771F69E601D7B34536D /* LXDownLoaderManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXDownLoaderManager-prefix.pch"; sourceTree = "<group>"; };
 		D2743FE567581ED62AFEDCF0AB319486 /* Pods-LXDownLoaderModule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXDownLoaderModule-dummy.m"; sourceTree = "<group>"; };
-		D62F761AD4CD76E5EB3FF167B33340DC /* LXDownLoaderManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXDownLoaderManager-Info.plist"; sourceTree = "<group>"; };
-		D978C046CB08DEBB12EF843FFB03E77F /* LXDownLoaderManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXDownLoaderManager-dummy.m"; sourceTree = "<group>"; };
+		DB98AAC5C80A08D5DDCBAC0C41033CD3 /* LXDownLoaderManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXDownLoaderManager.debug.xcconfig; sourceTree = "<group>"; };
 		DD9011B5D0000EF0BAA52EA3B288473B /* Pods-LXDownLoaderModule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXDownLoaderModule-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EF3573F4CD0446E617019D664BCA0912 /* LXDownLoaderManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LXDownLoaderManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		EF816D36C986FBF370A025F44C10E256 /* LXDownLoaderManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXDownLoaderManager.debug.xcconfig; sourceTree = "<group>"; };
-		F5B7040032C74C682D7AC84879E3CEA7 /* LXDownLoaderManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXDownLoaderManager.m; path = LXDownLoaderManager/LXDownLoaderManager.m; sourceTree = "<group>"; };
 		F7C1D7F208FFA455DB07C8F5510B4575 /* Pods-LXDownLoaderModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXDownLoaderModule.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7535C841C2756611D76B2E9749B2ADED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0E0869EB7BE066DF1A03902AE46F478 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B54940D233A43495FBC6486D1CD5B0BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C97F21D14399C5BFB391F061C771401 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D390AF32227067A855271757E67FD50F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83C98653EC8114119375925D7DB7679D /* Foundation.framework in Frameworks */,
+				5264FB19A62C8AD5EA4D3870236165DF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +92,21 @@
 				4FF34C956B3FF55F2E54F3CC0F1A8042 /* Pods_LXDownLoaderModule.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3384F9A8B98A36840AE017B3C7F3E222 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				10A73F89DF13004E4759C2CBE098E24E /* LXDownLoaderManager.modulemap */,
+				15EFEB3E8680415A548825D5795E828D /* LXDownLoaderManager-dummy.m */,
+				A1F4F68C79BCD816EE6BA127DF0F1CE4 /* LXDownLoaderManager-Info.plist */,
+				CA30AE5480CEB771F69E601D7B34536D /* LXDownLoaderManager-prefix.pch */,
+				C3D74B69CF8B795714661A153FB10498 /* LXDownLoaderManager-umbrella.h */,
+				DB98AAC5C80A08D5DDCBAC0C41033CD3 /* LXDownLoaderManager.debug.xcconfig */,
+				20E694D6F12908D4F6B2068273A45AF4 /* LXDownLoaderManager.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/LXDownLoaderManager";
 			sourceTree = "<group>";
 		};
 		38A82B567B15EFCFB01E90C3261597D6 /* Pods-LXDownLoaderModule */ = {
@@ -111,10 +126,36 @@
 			path = "Target Support Files/Pods-LXDownLoaderModule";
 			sourceTree = "<group>";
 		};
-		52629449C5D17BCAA77E1DEE3D82ACE5 /* Pod */ = {
+		3D190857BC2523818E16FCCCAAC8AAA6 /* LXDownLoaderManager */ = {
 			isa = PBXGroup;
 			children = (
-				EF3573F4CD0446E617019D664BCA0912 /* LXDownLoaderManager.podspec */,
+				4AF7DEBB9D4D6A02D9A110052462E743 /* LXDownLoader.h */,
+				0E68CD8086EFCB3D72441FC81D020948 /* LXDownLoader.m */,
+				3CF3315DF2C8CF6FCB2428C5B83A57F2 /* LXDownLoaderManager.h */,
+				A300BC9D97898614C2A0A455AD97EE28 /* LXDownLoaderManager.m */,
+				999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */,
+				92329820D2329D1F2839393A83DAB71C /* LXLoaderFile.m */,
+				4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */,
+				0F28E9B8C3A9741CBF4B84213655D260 /* NSString+MD5.m */,
+				76661214A8B9BD3177AA1DDE646406B9 /* Pod */,
+				3384F9A8B98A36840AE017B3C7F3E222 /* Support Files */,
+			);
+			name = LXDownLoaderManager;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		76661214A8B9BD3177AA1DDE646406B9 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				5F154485F1AEF18E71DF9C3E2DC7AC4B /* LXDownLoaderManager.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -122,7 +163,7 @@
 		BAD29C07167B72144E72415D946CF68F /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C33A4862671D75CCE0ADA37FB1292E9A /* LXDownLoaderManager */,
+				3D190857BC2523818E16FCCCAAC8AAA6 /* LXDownLoaderManager */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -133,32 +174,6 @@
 				38A82B567B15EFCFB01E90C3261597D6 /* Pods-LXDownLoaderModule */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		C33A4862671D75CCE0ADA37FB1292E9A /* LXDownLoaderManager */ = {
-			isa = PBXGroup;
-			children = (
-				B9D1582396AC1258298C52A7A699F779 /* LXDownLoader.h */,
-				A98BD0C3F72BE87E3877933960F4942E /* LXDownLoader.m */,
-				8A09B534E4AEEC3F306953B0F828603E /* LXDownLoaderManager.h */,
-				F5B7040032C74C682D7AC84879E3CEA7 /* LXDownLoaderManager.m */,
-				B4025C537273B9F30CD0416EA8991AF9 /* LXFileManager.h */,
-				C6913709058E73E4E8162F5A81BBD253 /* LXFileManager.m */,
-				BEE99D7D534521BA47F3ADC4421CAB01 /* NSString+MD5.h */,
-				6DE903CD80FE4F460CEBEC8DA068EF54 /* NSString+MD5.m */,
-				52629449C5D17BCAA77E1DEE3D82ACE5 /* Pod */,
-				E1F8D508C890B3E3B61E6E93D82DDCA9 /* Support Files */,
-			);
-			name = LXDownLoaderManager;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -175,46 +190,31 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E1F8D508C890B3E3B61E6E93D82DDCA9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				607B096145B84DFA7A0D89ED14ECA949 /* LXDownLoaderManager.modulemap */,
-				D978C046CB08DEBB12EF843FFB03E77F /* LXDownLoaderManager-dummy.m */,
-				D62F761AD4CD76E5EB3FF167B33340DC /* LXDownLoaderManager-Info.plist */,
-				4280E8165AF0B1C5A65D4E6C73D69A5E /* LXDownLoaderManager-prefix.pch */,
-				15ABF86C57637993E8C6F057AA9BDD0B /* LXDownLoaderManager-umbrella.h */,
-				EF816D36C986FBF370A025F44C10E256 /* LXDownLoaderManager.debug.xcconfig */,
-				8E041568AF5A3377230862F0FE7A74A3 /* LXDownLoaderManager.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/LXDownLoaderManager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B3DEB4C4C9F79D7B6F579A2294F2C860 /* Headers */ = {
+		0472B3ACBE5ACA46F328CA2FDAA678B2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F44DB0C39220F011368D3C3826E54710 /* Pods-LXDownLoaderModule-umbrella.h in Headers */,
+				EE3D9EA552F46FB599A6795639481943 /* Pods-LXDownLoaderModule-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8B125DD612961F0CA7864A2E8D9F0ED /* Headers */ = {
+		9F706C2CB259181CA074C887C63752BA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3A0A5A2ED7D48A8C7B8F9A3B1059944 /* LXDownLoader.h in Headers */,
-				00E29397A5647558FD58C0C7B0A3DCA1 /* LXDownLoaderManager-umbrella.h in Headers */,
-				A0512964B8DDA70D6F116A03462CC2CA /* LXDownLoaderManager.h in Headers */,
-				F9570274EAF7C73CAEF6900AB24FE9F2 /* LXFileManager.h in Headers */,
-				0C26369F176A209937C7AE2CB52BF69B /* NSString+MD5.h in Headers */,
+				F25991D750989F2450F7FAB0A0CD04B3 /* LXDownLoader.h in Headers */,
+				4FE99EACBA735DFEC24D26EE897AAB60 /* LXDownLoaderManager-umbrella.h in Headers */,
+				10515D3CADEE23D8ED0096673B62CC9C /* LXDownLoaderManager.h in Headers */,
+				F0FE2937CB7732240F0E4D74FCE59F5F /* LXLoaderFile.h in Headers */,
+				5DC3CB3C5338DA10567E95C3020BA9D7 /* NSString+MD5.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +225,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D593B378CDD2E7C66ED3E55133EFD08 /* Build configuration list for PBXNativeTarget "LXDownLoaderManager" */;
 			buildPhases = (
-				C8B125DD612961F0CA7864A2E8D9F0ED /* Headers */,
-				846821D7C6B3CA744381DDE9462D0D87 /* Sources */,
+				9F706C2CB259181CA074C887C63752BA /* Headers */,
+				493298A7626B57BD06A8E08DC9321F95 /* Sources */,
 				B54940D233A43495FBC6486D1CD5B0BC /* Frameworks */,
 				E3B18772B82662A58F3DACCE6F1C9385 /* Resources */,
 			);
@@ -241,17 +241,17 @@
 		};
 		F0471CACB5E6E1BC97F0F6498F1B9CBD /* Pods-LXDownLoaderModule */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5AA0BEF57D920CA1B4F7A9736F182EB /* Build configuration list for PBXNativeTarget "Pods-LXDownLoaderModule" */;
+			buildConfigurationList = 1F1ED7D1C08F3A072BA167CC48154D87 /* Build configuration list for PBXNativeTarget "Pods-LXDownLoaderModule" */;
 			buildPhases = (
-				B3DEB4C4C9F79D7B6F579A2294F2C860 /* Headers */,
-				2D3C8C32EA7615245BCB3073D6AEE477 /* Sources */,
-				D390AF32227067A855271757E67FD50F /* Frameworks */,
-				02485FC5F0EC5445DB9B521344F59100 /* Resources */,
+				0472B3ACBE5ACA46F328CA2FDAA678B2 /* Headers */,
+				3786C7A57362F9BB8BFFB34E8A193904 /* Sources */,
+				7535C841C2756611D76B2E9749B2ADED /* Frameworks */,
+				9DB8FBD43736FEC5B28FE755A8076530 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3A2A85823758EF120344F821AD3B2EE7 /* PBXTargetDependency */,
+				13585B225E8AAFC9CF76616AAED8458A /* PBXTargetDependency */,
 			);
 			name = "Pods-LXDownLoaderModule";
 			productName = "Pods-LXDownLoaderModule";
@@ -287,7 +287,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		02485FC5F0EC5445DB9B521344F59100 /* Resources */ = {
+		9DB8FBD43736FEC5B28FE755A8076530 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,45 +304,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2D3C8C32EA7615245BCB3073D6AEE477 /* Sources */ = {
+		3786C7A57362F9BB8BFFB34E8A193904 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70FE317162C4CC4BCD361FA444BD305C /* Pods-LXDownLoaderModule-dummy.m in Sources */,
+				95CCB57ED8258CD1A1B06CA86C317219 /* Pods-LXDownLoaderModule-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		846821D7C6B3CA744381DDE9462D0D87 /* Sources */ = {
+		493298A7626B57BD06A8E08DC9321F95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				556E02EB138EC2803497630790BCC3AB /* LXDownLoader.m in Sources */,
-				E77D4F7B2FA623876E4E77A7FEF8F093 /* LXDownLoaderManager-dummy.m in Sources */,
-				B4FFD0B5CD0BF786F7F2DDA8254C2B03 /* LXDownLoaderManager.m in Sources */,
-				7E18BB33CDC8D43B784CBAACA0FF8DFC /* LXFileManager.m in Sources */,
-				EC73914AF3DA9864366D33C6B2612C8E /* NSString+MD5.m in Sources */,
+				40E22299AA907C8DD1B205D7459EA369 /* LXDownLoader.m in Sources */,
+				0CCD706DE72261FF4A9FB9BC2A2877B1 /* LXDownLoaderManager-dummy.m in Sources */,
+				FE4FD6D3E220093D8231601DB856DFB2 /* LXDownLoaderManager.m in Sources */,
+				A29562C53249C6FB678A6ABBBD7D5D76 /* LXLoaderFile.m in Sources */,
+				AA6626032F102AEC1C4E8EBF65D4C331 /* NSString+MD5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3A2A85823758EF120344F821AD3B2EE7 /* PBXTargetDependency */ = {
+		13585B225E8AAFC9CF76616AAED8458A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LXDownLoaderManager;
 			target = 2E71D098F7E401439B25432143617BB6 /* LXDownLoaderManager */;
-			targetProxy = DC942E34DF6F80BB2B30BD16AE83CE0B /* PBXContainerItemProxy */;
+			targetProxy = 8969328BD3838A06DA9DFEE969C2E804 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4DCC3EC03D6CE4C30096B546F91B7DF4 /* Release */ = {
+		1058084213C19F23C817322B563960BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 513383252DA9852342DC10717D02D97D /* Pods-LXDownLoaderModule.release.xcconfig */;
+			baseConfigurationReference = 20E694D6F12908D4F6B2068273A45AF4 /* LXDownLoaderManager.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -351,23 +348,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/LXDownLoaderManager/LXDownLoaderManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LXDownLoaderManager/LXDownLoaderManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/LXDownLoaderManager/LXDownLoaderManager.modulemap";
+				PRODUCT_MODULE_NAME = LXDownLoaderManager;
+				PRODUCT_NAME = LXDownLoaderManager;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -375,48 +370,11 @@
 			};
 			name = Release;
 		};
-		7D004A9687524DF3DAC55166D8A57194 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7C1D7F208FFA455DB07C8F5510B4575 /* Pods-LXDownLoaderModule.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+		231528393B7084E13F97FF9EF804A1C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -439,6 +397,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -477,44 +436,11 @@
 			};
 			name = Debug;
 		};
-		CC839B642EF4DE625B89FCA6E211BD77 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF816D36C986FBF370A025F44C10E256 /* LXDownLoaderManager.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LXDownLoaderManager/LXDownLoaderManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LXDownLoaderManager/LXDownLoaderManager-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/LXDownLoaderManager/LXDownLoaderManager.modulemap";
-				PRODUCT_MODULE_NAME = LXDownLoaderManager;
-				PRODUCT_NAME = LXDownLoaderManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+		353D2EB3545D27343B51B709D9C0420B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -537,6 +463,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -571,11 +498,85 @@
 			};
 			name = Release;
 		};
-		F6D5E38E742251562E9FFD4FA1EDF659 /* Release */ = {
+		72D647B017010B2860D473A19B6F5797 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E041568AF5A3377230862F0FE7A74A3 /* LXDownLoaderManager.release.xcconfig */;
+			baseConfigurationReference = 513383252DA9852342DC10717D02D97D /* Pods-LXDownLoaderModule.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CB89F2663521AA06A9059FA868A7AC40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7C1D7F208FFA455DB07C8F5510B4575 /* Pods-LXDownLoaderModule.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LXDownLoaderModule/Pods-LXDownLoaderModule.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EDEDD645B36A8E9CA6E5072195A90F67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB98AAC5C80A08D5DDCBAC0C41033CD3 /* LXDownLoaderManager.debug.xcconfig */;
+			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -600,20 +601,28 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F1ED7D1C08F3A072BA167CC48154D87 /* Build configuration list for PBXNativeTarget "Pods-LXDownLoaderModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB89F2663521AA06A9059FA868A7AC40 /* Debug */,
+				72D647B017010B2860D473A19B6F5797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
-				ECB437504DF805BD96CAABF97400B526 /* Release */,
+				231528393B7084E13F97FF9EF804A1C0 /* Debug */,
+				353D2EB3545D27343B51B709D9C0420B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -621,17 +630,8 @@
 		6D593B378CDD2E7C66ED3E55133EFD08 /* Build configuration list for PBXNativeTarget "LXDownLoaderManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC839B642EF4DE625B89FCA6E211BD77 /* Debug */,
-				F6D5E38E742251562E9FFD4FA1EDF659 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E5AA0BEF57D920CA1B4F7A9736F182EB /* Build configuration list for PBXNativeTarget "Pods-LXDownLoaderModule" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7D004A9687524DF3DAC55166D8A57194 /* Debug */,
-				4DCC3EC03D6CE4C30096B546F91B7DF4 /* Release */,
+				EDEDD645B36A8E9CA6E5072195A90F67 /* Debug */,
+				1058084213C19F23C817322B563960BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

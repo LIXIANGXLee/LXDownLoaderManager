@@ -12,7 +12,7 @@
 
 #import "LXDownLoader.h"
 #import "LXDownLoaderManager.h"
-#import "LXFileManager.h"
+#import "LXLoaderFile.h"
 #import "NSString+MD5.h"
 
 FOUNDATION_EXPORT double LXDownLoaderManagerVersionNumber;

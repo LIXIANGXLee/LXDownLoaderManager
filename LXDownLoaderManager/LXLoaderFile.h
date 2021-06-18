@@ -1,5 +1,5 @@
 //
-//  LXFileManager.h
+//  LXLoaderFile.h
 //  LXDownLoaderModule
 //
 //  Created by Mac on 2020/5/3.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXFileManager : NSObject
+@interface LXLoaderFile : NSObject
 
 /**
 根据url获取沙盒路径（fileName）
@@ -34,10 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)fileExists:(NSString *)filePath;
 
-
 /**
  文件大小
- 
  @param filePath 文件路径
  @return 文件大小
  */
@@ -45,7 +43,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  移动一个文件,到另外一个文件路径中
- 
  @param fromPath 从哪个文件
  @param toPath 目标文件位置
  */
@@ -53,7 +50,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  删除某个文件
- 
  @param filePath 文件路径
  */
 + (void)removeFile:(NSString *)filePath;

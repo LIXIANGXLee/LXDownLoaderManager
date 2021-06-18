@@ -1,6 +1,6 @@
 {
   "name": "LXDownLoaderManager",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "summary": "LXDownLoaderManager.",
   "description": "LXDownLoaderManager is manager",
   "homepage": "https://github.com/LIXIANGXLee/LXDownLoaderManager",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/LIXIANGXLee/LXDownLoaderManager.git",
-    "tag": "1.0.1"
+    "tag": "2.0.0"
   },
   "source_files": "LXDownLoaderManager/*.{h,m}"
 }

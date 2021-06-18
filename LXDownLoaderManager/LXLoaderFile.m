@@ -6,16 +6,19 @@
 //  Copyright © 2020 李响. All rights reserved.
 //
 
-#import "LXFileManager.h"
+#import "LXLoaderFile.h"
 
-@implementation LXFileManager
+@implementation LXLoaderFile
 
 +(NSString *)cachePath:(NSURL *)url {
-    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:url.lastPathComponent];
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
+                                                NSUserDomainMask, YES).firstObject
+            stringByAppendingPathComponent:url.lastPathComponent];
 }
 
 +(NSString *)tmpPath:(NSURL *)url {
-    return [NSTemporaryDirectory() stringByAppendingPathComponent:url.lastPathComponent];
+    return [NSTemporaryDirectory()
+            stringByAppendingPathComponent:url.lastPathComponent];
 }
 
 + (BOOL)fileExists:(NSString *)filePath {
@@ -31,7 +34,8 @@
         return 0;
     }
     
-    NSDictionary *fileInfo = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
+    NSDictionary *fileInfo = [[NSFileManager defaultManager]
+                              attributesOfItemAtPath:filePath error:nil];
     
     return [fileInfo[NSFileSize] longLongValue];
 }
@@ -43,7 +47,8 @@
         return;
     }
     
-    [[NSFileManager defaultManager] moveItemAtPath:fromPath toPath:toPath error:nil];
+    [[NSFileManager defaultManager] moveItemAtPath:fromPath
+                                            toPath:toPath error:nil];
     
 }
 

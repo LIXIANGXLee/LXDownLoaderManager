@@ -12,9 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (MD5)
 
-/**
-  扩展 MD5
-*/
+/**扩展 MD5*/
 - (NSString *)md5;
 
 @end

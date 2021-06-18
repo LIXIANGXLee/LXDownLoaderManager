@@ -13,20 +13,25 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LXDownLoaderManager : NSObject
-/**
- 单例模式
- */
+
+/**单例模式*/
 + (instancetype)shareInstance;
-/**
-根据URL地址下载资源 (回调为子线程)
-@param url 资源路径
-@param downLoadInfo 资源资源大小回调
-@param stateChange 下载状态回调
-@param progressBlock 下载进度回调
-@param successBlock 下载成功回调
-@param failedBlock 下载失败回调
-*/
-- (void)downLoader:(NSURL *)url downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo stateChange:(LXStateChangeBlock)stateChange progress:(LXProgressBlock)progressBlock  success:(LXSuccessBlock)successBlock failed:(LXFailedBlock)failedBlock;
+
+ /**
+  根据URL地址下载资源 (回调为子线程)
+  @param url 资源路径
+  @param downLoadInfo 资源资源大小回调
+  @param stateChange 下载状态回调
+  @param progressBlock 下载进度回调
+  @param successBlock 下载成功回调
+  @param failedBlock 下载失败回调
+ */
+- (void)downLoader:(NSURL *)url
+      downLoadInfo:(LXDownLoadInfoBlock _Nullable)downLoadInfo
+       stateChange:(LXStateChangeBlock _Nullable)stateChange
+          progress:(LXProgressBlock _Nullable)progressBlock
+           success:(LXSuccessBlock _Nullable)successBlock
+            failed:(LXFailedBlock _Nullable)failedBlock;
 
 /**
 根据URL地址暂停下载资源
@@ -46,18 +51,13 @@ NS_ASSUME_NONNULL_BEGIN
 */
 - (void)cancelWithURL:(NSURL *)url;
 
-/**
-  暂停全部任务
-*/
+/**暂停全部任务*/
 - (void)pauseAll;
-/**
-  继续下载全部任务
-*/
+
+/**继续下载全部任务*/
 - (void)resumeAll;
 
-/**
- 设置最大并发数
- */
+/**设置最大并发数 建议不要太大*/
 -(void)setMaxConcurrentCount:(int)count;
 
 @end

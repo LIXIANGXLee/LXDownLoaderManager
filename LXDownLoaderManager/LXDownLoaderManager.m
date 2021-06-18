@@ -10,7 +10,7 @@
 #import "LXDownLoader.h"
 #import "NSString+MD5.h"
 
-@interface LXDownLoaderManager()<NSCopying, NSMutableCopying>
+@interface LXDownLoaderManager()
 
 @property (nonatomic, strong)NSMutableDictionary *downLoads;
 
@@ -37,15 +37,15 @@ static LXDownLoaderManager *_shareInstance;
     }
     return _shareInstance;
 }
-   
-- (id)copyWithZone:(NSZone *)zone {
-    return _shareInstance;
-}
 
-- (id)mutableCopyWithZone:(NSZone *)zone {
-    return _shareInstance;
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self setMaxConcurrentCount:5];
+    }
+    return self;
 }
-  
+    
 - (NSMutableDictionary *)downLoads {
     if (!_downLoads) {
         _downLoads = [NSMutableDictionary dictionary];
@@ -57,34 +57,39 @@ static LXDownLoaderManager *_shareInstance;
     _semaphore = dispatch_semaphore_create(count);
 }
 
-
-- (void)downLoader:(NSURL *)url downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo stateChange:(LXStateChangeBlock)stateChange progress:(LXProgressBlock)progressBlock success:(LXSuccessBlock)successBlock failed:(LXFailedBlock)failedBlock{
+- (void)downLoader:(NSURL *)url
+      downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo
+       stateChange:(LXStateChangeBlock)stateChange
+          progress:(LXProgressBlock)progressBlock
+           success:(LXSuccessBlock)successBlock
+            failed:(LXFailedBlock)failedBlock{
     
     __weak typeof(self) weakSelf = self ;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __strong typeof(self) strongSelf = weakSelf;
-
-        dispatch_semaphore_wait(strongSelf->_semaphore, DISPATCH_TIME_FOREVER);
+        
         NSString *urlMD5 = [url.absoluteString md5];
         //查找相应的下载器
         LXDownLoader *downLoader = self.downLoads[urlMD5];
-        
         if (downLoader == nil) {
             downLoader = [[LXDownLoader alloc] init];
-            downLoader.url = url;
             self.downLoads[urlMD5] = downLoader;
         }
         
+        dispatch_semaphore_wait(strongSelf->_semaphore,
+                                DISPATCH_TIME_FOREVER);
         //执行下载任务
-        [downLoader downLoader:url downLoadInfo:downLoadInfo stateChange:stateChange progress:progressBlock success:^(NSString * _Nonnull filePath) {
+        [downLoader downLoader:url
+                  downLoadInfo:downLoadInfo
+                   stateChange:stateChange
+                      progress:progressBlock
+                       success:^(NSString * _Nonnull filePath) {
             __strong typeof(self) strongSelf = weakSelf;
             [strongSelf.downLoads removeObjectForKey:urlMD5];
             dispatch_semaphore_signal(strongSelf->_semaphore);
-            if (successBlock) {
-                 successBlock(filePath);
-            }
+            if (successBlock) { successBlock(filePath); }
+            
         } failed:failedBlock];
-        
     });
 }
 
@@ -107,12 +112,13 @@ static LXDownLoaderManager *_shareInstance;
 }
 
 - (void)pauseAll {
-    [self.downLoads.allValues makeObjectsPerformSelector:@selector(pause)];
+    [self.downLoads.allValues
+     makeObjectsPerformSelector:@selector(pause)];
 }
 
 - (void)resumeAll {
-    [self.downLoads.allValues makeObjectsPerformSelector:@selector(resume)];
+    [self.downLoads.allValues
+     makeObjectsPerformSelector:@selector(resume)];
 }
-
 
 @end

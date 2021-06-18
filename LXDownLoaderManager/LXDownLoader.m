@@ -7,7 +7,7 @@
 //
 
 #import "LXDownLoader.h"
-#import "LXFileManager.h"
+#import "LXLoaderFile.h"
 
 @interface LXDownLoader ()<NSURLSessionDataDelegate>
 {
@@ -16,27 +16,33 @@
     /// 记录文件总大小
     long long _totalSize;
 }
+
 /** 下载会话 */
-@property (nonatomic, strong)NSURLSession *session;
+@property (nonatomic, strong) NSURLSession *session;
 /** 下载完成路径 */
-@property (nonatomic, copy)NSString *downLoadedPath;
+@property (nonatomic, copy) NSString *downLoadedPath;
 /** 下载临时路径 */
-@property (nonatomic, copy)NSString *downLoadingPath;
+@property (nonatomic, copy) NSString *downLoadingPath;
 /** 文件输出流 */
-@property (nonatomic, strong)NSOutputStream *outputStream;
+@property (nonatomic, strong) NSOutputStream *outputStream;
 /** 当前下载任务 */
-@property (nonatomic, weak)NSURLSessionDataTask *dataTask;
+@property (nonatomic, weak) NSURLSessionDataTask *dataTask;
 
 @end
 
 @implementation LXDownLoader
 
 #pragma mark - 提供给外界的接口
-- (void)downLoader:(NSURL *)url downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo stateChange:(LXStateChangeBlock)stateChange progress:(LXProgressBlock)progressBlock success:(LXSuccessBlock)successBlock failed:(LXFailedBlock)failedBlock {
+- (void)downLoader:(NSURL *)url
+      downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo
+       stateChange:(LXStateChangeBlock)stateChange
+          progress:(LXProgressBlock)progressChange
+           success:(LXSuccessBlock)successBlock
+            failed:(LXFailedBlock)failedBlock {
     
     // 回调 block赋值
     self.downLoadInfo = downLoadInfo;
-    self.progressChange = progressBlock;
+    self.progressChange = progressChange;
     self.stateChange = stateChange;
     self.successBlock = successBlock;
     self.faildBlock = failedBlock;
@@ -51,8 +57,11 @@
  */
 - (void)downLoader:(NSURL *)url {
 
+    // url 为空直接返回 不做任何处理
+    if (!url) { return; }
+    
     // 判断当前任务是否存在, 存在的话判断Url地址是否相等相同 再判断是否暂停状态
-    if ([url isEqual:self.dataTask.originalRequest.URL]) {
+    if ([url isEqual: self.dataTask.originalRequest.URL]) {
         // 判断当前的状态, 如果是暂停状态
         if (self.state == LXDownLoadStatePause) {
             [self resume];
@@ -63,29 +72,27 @@
    // 下载前 先取消上次下载（处理异常判断）
     [self cancel];
 
-    self.downLoadedPath = [LXFileManager cachePath:url];
-    self.downLoadingPath = [LXFileManager tmpPath:url];
+    self.downLoadedPath = [LXLoaderFile cachePath:url];
+    self.downLoadingPath = [LXLoaderFile tmpPath:url];
     
-    if ([LXFileManager fileExists:self.downLoadedPath]) {
+    if ([LXLoaderFile fileExists:self.downLoadedPath]) {
         self.state = LXDownLoadStateSuccess;
         return;
     }
     
     //  判断临时文件是否存在: 不存在从0字节开始请求资源
-    if (![LXFileManager fileExists:self.downLoadingPath]) {
+    if (![LXLoaderFile fileExists:self.downLoadingPath]) {
         // 从0字节开始请求资源
         [self downLoadWithURL:url offset:0];
         return;
     }
     
     //临时文件存在说明下载过 则继续下载
-    _tmpSize = [LXFileManager fileSize:self.downLoadingPath];
+    _tmpSize = [LXLoaderFile fileSize:self.downLoadingPath];
     [self downLoadWithURL:url offset:_tmpSize];
 }
 
-/**
- 暂停任务
- */
+/**暂停任务*/
 - (void)pause {
     if (self.state == LXDownLoadStateDownLoading) {
         self.state = LXDownLoadStatePause;
@@ -93,9 +100,7 @@
     }
 }
 
-/**
- 继续任务
- */
+/**继续任务*/
 - (void)resume {
     if (self.dataTask && self.state == LXDownLoadStatePause) {
         [self.dataTask resume];
@@ -103,23 +108,18 @@
     }
 }
 
-/**
- 取消当前任务
- */
+/**取消当前任务*/
 - (void)cancel {
     self.state = LXDownLoadStatePause;
     [self.session invalidateAndCancel];
     self.session = nil;
 }
 
-/**
- 取消任务, 并清理资源
- */
+/**取消任务, 并清理资源*/
 - (void)cancelAndClean {
     [self cancel];
-    [LXFileManager removeFile:self.downLoadingPath];
+    [LXLoaderFile removeFile:self.downLoadingPath];
 }
-
 
 #pragma mark - 系统 协议方法
 /**
@@ -145,7 +145,7 @@
     // 本地临时文件大小和数据总大小比较 相等 说明下载成功
     if (_tmpSize == _totalSize) {
         // 移动到下载完成文件夹
-        [LXFileManager moveFile:self.downLoadingPath toPath:self.downLoadedPath];
+        [LXLoaderFile moveFile:self.downLoadingPath toPath:self.downLoadedPath];
         // 已经下载成功 所以取消本次请求
         completionHandler(NSURLSessionResponseCancel);
         // 修改下载状态
@@ -153,10 +153,9 @@
         return;
     }
     
-    
     // 本地临时文件大小和数据总大小比较 临时文件大 说明存在异常 需要重新下载
     if (_tmpSize > _totalSize) {
-        [LXFileManager removeFile:self.downLoadingPath];
+        [LXLoaderFile removeFile:self.downLoadingPath];
         completionHandler(NSURLSessionResponseCancel);
         [self downLoader:response.URL];
         return;
@@ -164,13 +163,15 @@
     
     self.state = LXDownLoadStateDownLoading;
     // 继续接受数据
-    self.outputStream = [NSOutputStream outputStreamToFileAtPath:self.downLoadingPath append:YES];
+    self.outputStream = [NSOutputStream outputStreamToFileAtPath:self.downLoadingPath
+                                                          append:YES];
     [self.outputStream open];
     completionHandler(NSURLSessionResponseAllow);
     
 }
 
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+    didReceiveData:(NSData *)data{
     // 这就是当前已经下载的大小
     _tmpSize += data.length;
     self.progress =  1.0 * _tmpSize / _totalSize;
@@ -183,18 +184,18 @@
     
     if (error == nil) {
         // 下载完成 但不一定下载成功 只有临时文件和资源文件大小相等 才算成功
-        if ([LXFileManager fileSize:self.downLoadingPath] == _tmpSize) {
-            [LXFileManager moveFile:self.downLoadingPath toPath:self.downLoadedPath];
+        if ([LXLoaderFile fileSize:self.downLoadingPath] == _tmpSize) {
+            [LXLoaderFile moveFile:self.downLoadingPath toPath:self.downLoadedPath];
             self.state = LXDownLoadStateSuccess;
         }else {  // 失败
             self.state = LXDownLoadStateFailed;
-            [LXFileManager removeFile:self.downLoadingPath];
+            [LXLoaderFile removeFile:self.downLoadingPath];
         }
     }else {
-        // 取消,  断网
+        // 取消
         if (error.code == -999) {
             self.state = LXDownLoadStatePause;
-        }else {
+        }else { // 断网
             self.state = LXDownLoadStateFailed;
             if (self.faildBlock) {
                 self.faildBlock(error);
@@ -230,8 +231,8 @@
  */
 - (NSURLSession *)session {
     if (!_session) {
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration
+                   defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     }
     return _session;
 }
