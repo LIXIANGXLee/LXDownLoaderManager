@@ -1,5 +1,5 @@
 PODS:
-  - LXDownLoaderManager (2.0.0)
+  - LXDownLoaderManager (3.0.0)
 
 DEPENDENCIES:
   - LXDownLoaderManager (from `./`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  LXDownLoaderManager: b3e7ebd80ae312eaf7649f6198db2bc18e2ac2a7
+  LXDownLoaderManager: ee46a822ee697ca87a4fcd9f24584d01ea0301d8
 
 PODFILE CHECKSUM: 1743fe1742cbf4f41014b4a40f1f3bfa9ac77e9f
 

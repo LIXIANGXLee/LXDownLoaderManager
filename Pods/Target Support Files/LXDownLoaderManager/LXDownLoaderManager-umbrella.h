@@ -12,6 +12,7 @@
 
 #import "LXDownLoaderManager.h"
 #import "LXDownLoader.h"
+#import "LXLoaderFile.h"
 
 FOUNDATION_EXPORT double LXDownLoaderManagerVersionNumber;
 FOUNDATION_EXPORT const unsigned char LXDownLoaderManagerVersionString[];

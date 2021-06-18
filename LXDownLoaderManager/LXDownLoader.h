@@ -38,10 +38,6 @@ typedef void(^LXStateChangeBlock) (LXDownLoadState state);
 @property (nonatomic, copy) LXSuccessBlock successBlock;
 @property (nonatomic, copy) LXFailedBlock faildBlock;
 
-
-/**检查资源是否已经下载到本地了*/
-- (BOOL)isCheckUrlInLocal:(NSURL *)url;
-
 /**
  根据URL地址下载资源
  @param url 资源路径
@@ -73,6 +69,15 @@ typedef void(^LXStateChangeBlock) (LXDownLoadState state);
 
 /**取消任务, 并清理资源*/
 - (void)cancelAndClean;
+
+/**检查资源是否已经下载到本地了*/
+- (BOOL)isCheckUrlInLocal:(NSURL *)url;
+
+/**获取下载后的本地路径*/
+- (NSString *)getLocalDownloadPath:(NSURL *)url;
+
+/**获取已下载文件大小 临时文件大小 如果下载完成的 此方法获取大小为0 */
+- (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url;
 
 @end
 

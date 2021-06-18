@@ -8,33 +8,27 @@
 
 #import "LXLoaderFile.h"
 
+#define BUNDLEIDENTIFIER [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"] stringByAppendingPathComponent:@"IosFile"]
+
+#define DIRECTORIESPATH NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject
+ 
 @implementation LXLoaderFile
 
 + (NSString *)documentPath:(NSURL *)url {
-    
-    NSString *identifier = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
-    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                              NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:identifier];
+   
+    NSString *filePath = [DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER];
     if (![self fileExists:filePath]) {
-        BOOL isDir = NO;
-        BOOL existed = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
-        if (!(isDir && existed)) {
-            [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
-        }
+        [self createDirectory:filePath];
     }
     return [filePath stringByAppendingPathComponent:url.lastPathComponent];
 }
 
 + (NSString *)tmpPath:(NSURL *)url {
     
-    NSString *identifier = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
-    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:identifier];
+    NSString *filePath = [[DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER]
+                          stringByAppendingPathComponent:@"tempIosFile"];
     if (![self fileExists:filePath]) {
-        BOOL isDir = NO;
-        BOOL existed = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
-        if (!(isDir && existed)) {
-            [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
-        }
+        [self createDirectory:filePath];
     }
     return [filePath stringByAppendingPathComponent:url.lastPathComponent];
 }
@@ -71,8 +65,32 @@
 
 + (void)removeFile:(NSString *)filePath {
    
-    [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    if ([self fileExists:filePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
 }
 
++ (void)createDirectory:(NSString *)filePath {
+    BOOL isDir = NO;
+    BOOL existed = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
+    if (!(isDir && existed)) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+}
+
++ (void)clearTmp {
+    NSString *filePath = [[DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER]
+                          stringByAppendingPathComponent:@"tempIosFile"];
+    if ([self fileExists:filePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
+}
+
++ (void)clearDocument {
+    NSString *filePath = [DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER];
+    if ([self fileExists:filePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
+}
 
 @end

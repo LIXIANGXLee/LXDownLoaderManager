@@ -9,6 +9,7 @@
 #import "LXDownLoaderManager.h"
 #import "LXDownLoader.h"
 #import "NSString+MD5.h"
+#import "LXLoaderFile.h"
 
 @interface LXDownLoaderManager()
 
@@ -70,10 +71,10 @@ static LXDownLoaderManager *_shareInstance;
         
         NSString *urlMD5 = [url.absoluteString md5];
         //查找相应的下载器
-        LXDownLoader *downLoader = self.downLoads[urlMD5];
+        LXDownLoader *downLoader = strongSelf.downLoads[urlMD5];
         if (downLoader == nil) {
             downLoader = [[LXDownLoader alloc] init];
-            self.downLoads[urlMD5] = downLoader;
+            strongSelf.downLoads[urlMD5] = downLoader;
         }
         
         dispatch_semaphore_wait(strongSelf->_semaphore,
@@ -119,6 +120,34 @@ static LXDownLoaderManager *_shareInstance;
 - (void)resumeAll {
     [self.downLoads.allValues
      makeObjectsPerformSelector:@selector(resume)];
+}
+
+- (BOOL)isCheckUrlInLocal:(NSURL *)url {
+    
+    NSString *downLoadedPath = [self getLocalDownloadPath:url];
+    if (!downLoadedPath) {
+        return  NO;
+    }
+    
+    return [LXLoaderFile fileExists:downLoadedPath];
+}
+
+- (NSString *)getLocalDownloadPath:(NSURL *)url {
+    if (!url) { return  nil; }
+    
+    return [LXLoaderFile documentPath:url];
+}
+
+- (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url {
+    if (!url) { return  0; }
+
+    NSString *tPath = [LXLoaderFile tmpPath:url];
+    long long fileSize = [LXLoaderFile fileSize:tPath];
+    if (fileSize <= 0) {
+        NSString *dPath = [LXLoaderFile documentPath:url];
+        fileSize = [LXLoaderFile fileSize:dPath];
+    }
+    return fileSize;
 }
 
 @end

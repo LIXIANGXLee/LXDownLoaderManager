@@ -60,6 +60,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**设置最大并发数 建议不要太大*/
 -(void)setMaxConcurrentCount:(int)count;
 
+/**检查资源是否已经下载到本地了*/
+- (BOOL)isCheckUrlInLocal:(NSURL *)url;
+
+/**获取下载后的本地路径*/
+- (NSString *)getLocalDownloadPath:(NSURL *)url;
+
+/**获取已下载文件大小 临时文件大小 如果下载完成的 此方法获取大小为0 */
+- (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url;
+
 @end
 
 NS_ASSUME_NONNULL_END

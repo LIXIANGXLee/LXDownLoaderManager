@@ -52,6 +52,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)removeFile:(NSString *)filePath;
 
+/**
+ 创建文件目录
+ @param filePath 文件路径
+ */
++ (void)createDirectory:(NSString *)filePath;
+
+/** 清空临时缓存*/
++ (void)clearTmp;
+
+/** 清空下载好的资源缓存 和临时缓存*/
++ (void)clearDocument;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -34,14 +34,6 @@
 
 #pragma mark - 提供给外界的接口
 
-- (BOOL)isCheckUrlInLocal:(NSURL *)url {
-    
-    if (!url) { return  NO; }
-    
-    self.downLoadedPath = [LXLoaderFile documentPath:url];
-    return [LXLoaderFile fileExists:self.downLoadedPath];
-}
-
 - (void)downLoader:(NSURL *)url
       downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo
        stateChange:(LXStateChangeBlock)stateChange
@@ -126,6 +118,34 @@
 - (void)cancelAndClean {
     [self cancel];
     [LXLoaderFile removeFile:self.downLoadingPath];
+}
+
+- (BOOL)isCheckUrlInLocal:(NSURL *)url {
+    
+    if (![self getLocalDownloadPath:url]) {
+        return  NO;
+    }
+    
+    return [LXLoaderFile fileExists:self.downLoadedPath];
+}
+
+- (NSString *)getLocalDownloadPath:(NSURL *)url {
+    if (!url) { return  nil; }
+    
+    self.downLoadedPath = [LXLoaderFile documentPath:url];
+    return self.downLoadedPath;
+}
+
+- (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url {
+    if (!url) { return  0; }
+
+    NSString *path = [LXLoaderFile tmpPath:url];
+    long long fileSize = [LXLoaderFile fileSize:path];
+    if (fileSize <= 0) {
+        NSString *path = [LXLoaderFile documentPath:url];
+        fileSize = [LXLoaderFile fileSize:path];
+    }
+    return fileSize;
 }
 
 #pragma mark - 系统 协议方法
