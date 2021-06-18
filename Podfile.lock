@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  LXDownLoaderManager: 897c069fddb8fd1b7080633014384710f8f500a1
+  LXDownLoaderManager: b3e7ebd80ae312eaf7649f6198db2bc18e2ac2a7
 
 PODFILE CHECKSUM: 1743fe1742cbf4f41014b4a40f1f3bfa9ac77e9f
 

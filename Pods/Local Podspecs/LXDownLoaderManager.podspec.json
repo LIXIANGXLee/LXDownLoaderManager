@@ -15,5 +15,9 @@
     "git": "https://github.com/LIXIANGXLee/LXDownLoaderManager.git",
     "tag": "2.0.0"
   },
-  "source_files": "LXDownLoaderManager/*.{h,m}"
+  "source_files": "LXDownLoaderManager/*.{h,m}",
+  "public_header_files": [
+    "LXDownLoaderManager/LXDownLoaderManager.h",
+    "LXDownLoaderManager/LXDownLoader.h"
+  ]
 }

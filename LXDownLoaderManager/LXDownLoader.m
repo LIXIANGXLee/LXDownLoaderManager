@@ -33,6 +33,15 @@
 @implementation LXDownLoader
 
 #pragma mark - 提供给外界的接口
+
+- (BOOL)isCheckUrlInLocal:(NSURL *)url {
+    
+    if (!url) { return  NO; }
+    
+    self.downLoadedPath = [LXLoaderFile documentPath:url];
+    return [LXLoaderFile fileExists:self.downLoadedPath];
+}
+
 - (void)downLoader:(NSURL *)url
       downLoadInfo:(LXDownLoadInfoBlock)downLoadInfo
        stateChange:(LXStateChangeBlock)stateChange
@@ -71,16 +80,14 @@
     
    // 下载前 先取消上次下载（处理异常判断）
     [self cancel];
-
-    self.downLoadedPath = [LXLoaderFile cachePath:url];
-    self.downLoadingPath = [LXLoaderFile tmpPath:url];
     
-    if ([LXLoaderFile fileExists:self.downLoadedPath]) {
+    if ([self isCheckUrlInLocal:url]) {
         self.state = LXDownLoadStateSuccess;
         return;
     }
     
     //  判断临时文件是否存在: 不存在从0字节开始请求资源
+    self.downLoadingPath = [LXLoaderFile tmpPath:url];
     if (![LXLoaderFile fileExists:self.downLoadingPath]) {
         // 从0字节开始请求资源
         [self downLoadWithURL:url offset:0];

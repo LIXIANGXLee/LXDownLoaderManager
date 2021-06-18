@@ -10,10 +10,8 @@
 #endif
 #endif
 
-#import "LXDownLoader.h"
 #import "LXDownLoaderManager.h"
-#import "LXLoaderFile.h"
-#import "NSString+MD5.h"
+#import "LXDownLoader.h"
 
 FOUNDATION_EXPORT double LXDownLoaderManagerVersionNumber;
 FOUNDATION_EXPORT const unsigned char LXDownLoaderManagerVersionString[];

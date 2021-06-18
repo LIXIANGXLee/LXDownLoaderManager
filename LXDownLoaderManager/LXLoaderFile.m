@@ -10,21 +10,40 @@
 
 @implementation LXLoaderFile
 
-+(NSString *)cachePath:(NSURL *)url {
-    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
-                                                NSUserDomainMask, YES).firstObject
-            stringByAppendingPathComponent:url.lastPathComponent];
++ (NSString *)documentPath:(NSURL *)url {
+    
+    NSString *identifier = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                              NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:identifier];
+    if (![self fileExists:filePath]) {
+        BOOL isDir = NO;
+        BOOL existed = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
+        if (!(isDir && existed)) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+    }
+    return [filePath stringByAppendingPathComponent:url.lastPathComponent];
 }
 
-+(NSString *)tmpPath:(NSURL *)url {
-    return [NSTemporaryDirectory()
-            stringByAppendingPathComponent:url.lastPathComponent];
++ (NSString *)tmpPath:(NSURL *)url {
+    
+    NSString *identifier = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:identifier];
+    if (![self fileExists:filePath]) {
+        BOOL isDir = NO;
+        BOOL existed = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
+        if (!(isDir && existed)) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+    }
+    return [filePath stringByAppendingPathComponent:url.lastPathComponent];
 }
 
 + (BOOL)fileExists:(NSString *)filePath {
-    if (filePath.length == 0) {
+    if (!filePath || filePath.length == 0) {
         return NO;
     }
+    
     return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
 
@@ -36,7 +55,6 @@
     
     NSDictionary *fileInfo = [[NSFileManager defaultManager]
                               attributesOfItemAtPath:filePath error:nil];
-    
     return [fileInfo[NSFileSize] longLongValue];
 }
 
@@ -49,7 +67,6 @@
     
     [[NSFileManager defaultManager] moveItemAtPath:fromPath
                                             toPath:toPath error:nil];
-    
 }
 
 + (void)removeFile:(NSString *)filePath {

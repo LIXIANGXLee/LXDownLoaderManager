@@ -38,6 +38,10 @@ typedef void(^LXStateChangeBlock) (LXDownLoadState state);
 @property (nonatomic, copy) LXSuccessBlock successBlock;
 @property (nonatomic, copy) LXFailedBlock faildBlock;
 
+
+/**检查资源是否已经下载到本地了*/
+- (BOOL)isCheckUrlInLocal:(NSURL *)url;
+
 /**
  根据URL地址下载资源
  @param url 资源路径

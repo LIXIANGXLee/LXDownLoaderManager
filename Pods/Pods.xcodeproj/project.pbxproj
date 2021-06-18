@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		0CCD706DE72261FF4A9FB9BC2A2877B1 /* LXDownLoaderManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFEB3E8680415A548825D5795E828D /* LXDownLoaderManager-dummy.m */; };
 		10515D3CADEE23D8ED0096673B62CC9C /* LXDownLoaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF3315DF2C8CF6FCB2428C5B83A57F2 /* LXDownLoaderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34B1563B2E0B9829D30D70EE6E3346CA /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		40E22299AA907C8DD1B205D7459EA369 /* LXDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E68CD8086EFCB3D72441FC81D020948 /* LXDownLoader.m */; };
 		4FE99EACBA735DFEC24D26EE897AAB60 /* LXDownLoaderManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3D74B69CF8B795714661A153FB10498 /* LXDownLoaderManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5264FB19A62C8AD5EA4D3870236165DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5DC3CB3C5338DA10567E95C3020BA9D7 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F254FD9052CA7C7F341B7AE4EB90693 /* LXLoaderFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		95CCB57ED8258CD1A1B06CA86C317219 /* Pods-LXDownLoaderModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2743FE567581ED62AFEDCF0AB319486 /* Pods-LXDownLoaderModule-dummy.m */; };
 		A0E0869EB7BE066DF1A03902AE46F478 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		A29562C53249C6FB678A6ABBBD7D5D76 /* LXLoaderFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 92329820D2329D1F2839393A83DAB71C /* LXLoaderFile.m */; };
 		AA6626032F102AEC1C4E8EBF65D4C331 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E9B8C3A9741CBF4B84213655D260 /* NSString+MD5.m */; };
 		EE3D9EA552F46FB599A6795639481943 /* Pods-LXDownLoaderModule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C561B219EDA5AD3205C3D886063A127D /* Pods-LXDownLoaderModule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0FE2937CB7732240F0E4D74FCE59F5F /* LXLoaderFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F25991D750989F2450F7FAB0A0CD04B3 /* LXDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF7DEBB9D4D6A02D9A110052462E743 /* LXDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE4FD6D3E220093D8231601DB856DFB2 /* LXDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A300BC9D97898614C2A0A455AD97EE28 /* LXDownLoaderManager.m */; };
 /* End PBXBuildFile section */
@@ -213,8 +213,8 @@
 				F25991D750989F2450F7FAB0A0CD04B3 /* LXDownLoader.h in Headers */,
 				4FE99EACBA735DFEC24D26EE897AAB60 /* LXDownLoaderManager-umbrella.h in Headers */,
 				10515D3CADEE23D8ED0096673B62CC9C /* LXDownLoaderManager.h in Headers */,
-				F0FE2937CB7732240F0E4D74FCE59F5F /* LXLoaderFile.h in Headers */,
-				5DC3CB3C5338DA10567E95C3020BA9D7 /* NSString+MD5.h in Headers */,
+				7F254FD9052CA7C7F341B7AE4EB90693 /* LXLoaderFile.h in Headers */,
+				34B1563B2E0B9829D30D70EE6E3346CA /* NSString+MD5.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

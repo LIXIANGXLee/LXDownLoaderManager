@@ -17,18 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @param url 文件路径
 */
-+(NSString *)cachePath:(NSURL *)url;
++ (NSString *)documentPath:(NSURL *)url;
 
 /**
 根据url获取临时路径（fileName）
-
 @param url 文件路径
 */
-+(NSString *)tmpPath:(NSURL *)url;
++ (NSString *)tmpPath:(NSURL *)url;
 
 /**
  文件是否存在
- 
  @param filePath 文件路径
  @return 是否存在
  */
