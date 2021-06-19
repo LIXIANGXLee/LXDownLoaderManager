@@ -64,6 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 清空下载好的资源缓存 和临时缓存*/
 + (void)clearDocument;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

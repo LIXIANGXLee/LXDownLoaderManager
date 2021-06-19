@@ -7,15 +7,20 @@
 //
 
 #import "LXLoaderFile.h"
+#import "NSString+LXTool.h"
 
-#define BUNDLEIDENTIFIER [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"] stringByAppendingPathComponent:@"IosFile"]
+#define SUBPATH [@"IosFile" lx_md5]
+#define TEMSUBPATH [@"tempIosFile" lx_md5]
+
+#define BUNDLEIDENTIFIER [[[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"] lx_md5] stringByAppendingPathComponent:SUBPATH]
 
 #define DIRECTORIESPATH NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject
  
 @implementation LXLoaderFile
 
 + (NSString *)documentPath:(NSURL *)url {
-   
+    if (url.absoluteString.isEmpty) { return @""; }
+    
     NSString *filePath = [DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER];
     if (![self fileExists:filePath]) {
         [self createDirectory:filePath];
@@ -24,9 +29,10 @@
 }
 
 + (NSString *)tmpPath:(NSURL *)url {
-    
+    if (url.absoluteString.isEmpty) { return @""; }
+
     NSString *filePath = [[DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER]
-                          stringByAppendingPathComponent:@"tempIosFile"];
+                          stringByAppendingPathComponent:TEMSUBPATH];
     if (![self fileExists:filePath]) {
         [self createDirectory:filePath];
     }
@@ -34,15 +40,12 @@
 }
 
 + (BOOL)fileExists:(NSString *)filePath {
-    if (!filePath || filePath.length == 0) {
-        return NO;
-    }
-    
+    if (filePath.isEmpty) { return NO; }
+
     return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
 
 + (long long)fileSize:(NSString *)filePath {
-    
     if (![self fileExists:filePath]) {
         return 0;
     }
@@ -54,7 +57,6 @@
 
 
 + (void)moveFile:(NSString *)fromPath toPath:(NSString *)toPath {
-    
     if (![self fileSize:fromPath]) {
         return;
     }
@@ -64,13 +66,17 @@
 }
 
 + (void)removeFile:(NSString *)filePath {
-   
     if ([self fileExists:filePath]) {
         [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
     }
 }
 
 + (void)createDirectory:(NSString *)filePath {
+    if (filePath.isEmpty) {
+        NSLog(@"创建文件目录失败");
+        return ;
+    }
+
     BOOL isDir = NO;
     BOOL existed = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
     if (!(isDir && existed)) {

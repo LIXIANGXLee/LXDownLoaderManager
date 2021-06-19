@@ -8,7 +8,7 @@
 
 #import "LXDownLoaderManager.h"
 #import "LXDownLoader.h"
-#import "NSString+MD5.h"
+#import "NSString+LXTool.h"
 #import "LXLoaderFile.h"
 
 @interface LXDownLoaderManager()
@@ -65,11 +65,16 @@ static LXDownLoaderManager *_shareInstance;
            success:(LXSuccessBlock)successBlock
             failed:(LXFailedBlock)failedBlock{
     
+    // url为空或者不是有效的http和https链接 直接返回 不做任何处理
+    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+        return;
+    }
+    
     __weak typeof(self) weakSelf = self ;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __strong typeof(self) strongSelf = weakSelf;
         
-        NSString *urlMD5 = [url.absoluteString md5];
+        NSString *urlMD5 = [url.absoluteString lx_md5];
         //查找相应的下载器
         LXDownLoader *downLoader = strongSelf.downLoads[urlMD5];
         if (downLoader == nil) {
@@ -95,19 +100,31 @@ static LXDownLoaderManager *_shareInstance;
 }
 
 - (void)pauseWithURL:(NSURL *)url {
-    NSString *urlMD5 = [url.absoluteString md5];
+    // url为空或者不是有效的http和https链接 直接返回 不做任何处理
+    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+        return;
+    }
+    NSString *urlMD5 = [url.absoluteString lx_md5];
     LXDownLoader *downLoader = self.downLoads[urlMD5];
     [downLoader pause];
 }
 
 - (void)resumeWithURL:(NSURL *)url {
-    NSString *urlMD5 = [url.absoluteString md5];
+    // url为空或者不是有效的http和https链接 直接返回 不做任何处理
+    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+        return;
+    }
+    NSString *urlMD5 = [url.absoluteString lx_md5];
     LXDownLoader *downLoader = self.downLoads[urlMD5];
     [downLoader resume];
 }
 
 - (void)cancelWithURL:(NSURL *)url {
-    NSString *urlMD5 = [url.absoluteString md5];
+    // url为空或者不是有效的http和https链接 直接返回 不做任何处理
+    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+        return;
+    }
+    NSString *urlMD5 = [url.absoluteString lx_md5];
     LXDownLoader *downLoader = self.downLoads[urlMD5];
     [downLoader cancel];
 }

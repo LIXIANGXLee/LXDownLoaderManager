@@ -21,8 +21,9 @@
     [super viewDidLoad];
    
     LXDownLoaderManager * manager = [LXDownLoaderManager shareInstance];
-//    [manager setMaxConcurrentCount:2];
+    [manager setMaxConcurrentCount:20];
     
+   
     NSArray * arr = @[ ];
     
     [arr enumerateObjectsUsingBlock:^(NSString  *obj, NSUInteger idx, BOOL * _Nonnull stop) {

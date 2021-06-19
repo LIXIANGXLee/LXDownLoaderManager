@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		0CCD706DE72261FF4A9FB9BC2A2877B1 /* LXDownLoaderManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFEB3E8680415A548825D5795E828D /* LXDownLoaderManager-dummy.m */; };
 		10515D3CADEE23D8ED0096673B62CC9C /* LXDownLoaderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF3315DF2C8CF6FCB2428C5B83A57F2 /* LXDownLoaderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34B1563B2E0B9829D30D70EE6E3346CA /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		34B1563B2E0B9829D30D70EE6E3346CA /* NSString+LXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4204D2AF4B07221A98D4833276E5E3E9 /* NSString+LXTool.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		40E22299AA907C8DD1B205D7459EA369 /* LXDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E68CD8086EFCB3D72441FC81D020948 /* LXDownLoader.m */; };
 		4FE99EACBA735DFEC24D26EE897AAB60 /* LXDownLoaderManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3D74B69CF8B795714661A153FB10498 /* LXDownLoaderManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5264FB19A62C8AD5EA4D3870236165DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		95CCB57ED8258CD1A1B06CA86C317219 /* Pods-LXDownLoaderModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2743FE567581ED62AFEDCF0AB319486 /* Pods-LXDownLoaderModule-dummy.m */; };
 		A0E0869EB7BE066DF1A03902AE46F478 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		A29562C53249C6FB678A6ABBBD7D5D76 /* LXLoaderFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 92329820D2329D1F2839393A83DAB71C /* LXLoaderFile.m */; };
-		AA6626032F102AEC1C4E8EBF65D4C331 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E9B8C3A9741CBF4B84213655D260 /* NSString+MD5.m */; };
+		AA6626032F102AEC1C4E8EBF65D4C331 /* NSString+LXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F28E9B8C3A9741CBF4B84213655D260 /* NSString+LXTool.m */; };
 		EE3D9EA552F46FB599A6795639481943 /* Pods-LXDownLoaderModule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C561B219EDA5AD3205C3D886063A127D /* Pods-LXDownLoaderModule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0FE2937CB7732240F0E4D74FCE59F5F /* LXLoaderFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F25991D750989F2450F7FAB0A0CD04B3 /* LXDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF7DEBB9D4D6A02D9A110052462E743 /* LXDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,23 +35,23 @@
 
 /* Begin PBXFileReference section */
 		0E68CD8086EFCB3D72441FC81D020948 /* LXDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXDownLoader.m; path = LXDownLoaderManager/LXDownLoader.m; sourceTree = "<group>"; };
-		0F28E9B8C3A9741CBF4B84213655D260 /* NSString+MD5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "LXDownLoaderManager/NSString+MD5.m"; sourceTree = "<group>"; };
+		0F28E9B8C3A9741CBF4B84213655D260 /* NSString+LXTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+LXTool.m"; path = "LXDownLoaderManager/NSString+LXTool.m"; sourceTree = "<group>"; };
 		10A73F89DF13004E4759C2CBE098E24E /* LXDownLoaderManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXDownLoaderManager.modulemap; sourceTree = "<group>"; };
 		15EFEB3E8680415A548825D5795E828D /* LXDownLoaderManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXDownLoaderManager-dummy.m"; sourceTree = "<group>"; };
 		20E694D6F12908D4F6B2068273A45AF4 /* LXDownLoaderManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXDownLoaderManager.release.xcconfig; sourceTree = "<group>"; };
 		29D92C1CE0BFEE439D16FCE3CB33160A /* Pods-LXDownLoaderModule-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXDownLoaderModule-Info.plist"; sourceTree = "<group>"; };
 		3CF3315DF2C8CF6FCB2428C5B83A57F2 /* LXDownLoaderManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXDownLoaderManager.h; path = LXDownLoaderManager/LXDownLoaderManager.h; sourceTree = "<group>"; };
-		4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "LXDownLoaderManager/NSString+MD5.h"; sourceTree = "<group>"; };
+		4204D2AF4B07221A98D4833276E5E3E9 /* NSString+LXTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+LXTool.h"; path = "LXDownLoaderManager/NSString+LXTool.h"; sourceTree = "<group>"; };
 		4AF7DEBB9D4D6A02D9A110052462E743 /* LXDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXDownLoader.h; path = LXDownLoaderManager/LXDownLoader.h; sourceTree = "<group>"; };
-		4FF34C956B3FF55F2E54F3CC0F1A8042 /* Pods_LXDownLoaderModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXDownLoaderModule.framework; path = "Pods-LXDownLoaderModule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FF34C956B3FF55F2E54F3CC0F1A8042 /* Pods_LXDownLoaderModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LXDownLoaderModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513383252DA9852342DC10717D02D97D /* Pods-LXDownLoaderModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXDownLoaderModule.release.xcconfig"; sourceTree = "<group>"; };
-		5F154485F1AEF18E71DF9C3E2DC7AC4B /* LXDownLoaderManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LXDownLoaderManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5F154485F1AEF18E71DF9C3E2DC7AC4B /* LXDownLoaderManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = LXDownLoaderManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		815D5049569A29145A5B459E01BD2479 /* Pods-LXDownLoaderModule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXDownLoaderModule.modulemap"; sourceTree = "<group>"; };
 		92329820D2329D1F2839393A83DAB71C /* LXLoaderFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXLoaderFile.m; path = LXDownLoaderManager/LXLoaderFile.m; sourceTree = "<group>"; };
-		9312BF2F391AD5BFEEA2F38C059ECE1D /* LXDownLoaderManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXDownLoaderManager.framework; path = LXDownLoaderManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9312BF2F391AD5BFEEA2F38C059ECE1D /* LXDownLoaderManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LXDownLoaderManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXLoaderFile.h; path = LXDownLoaderManager/LXLoaderFile.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1F4F68C79BCD816EE6BA127DF0F1CE4 /* LXDownLoaderManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXDownLoaderManager-Info.plist"; sourceTree = "<group>"; };
 		A300BC9D97898614C2A0A455AD97EE28 /* LXDownLoaderManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXDownLoaderManager.m; path = LXDownLoaderManager/LXDownLoaderManager.m; sourceTree = "<group>"; };
 		B144D080C997ED080A9CF8B5E04F8F1F /* Pods-LXDownLoaderModule-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXDownLoaderModule-frameworks.sh"; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 				A300BC9D97898614C2A0A455AD97EE28 /* LXDownLoaderManager.m */,
 				999184EE9C375E359B55C45385C38BF6 /* LXLoaderFile.h */,
 				92329820D2329D1F2839393A83DAB71C /* LXLoaderFile.m */,
-				4204D2AF4B07221A98D4833276E5E3E9 /* NSString+MD5.h */,
-				0F28E9B8C3A9741CBF4B84213655D260 /* NSString+MD5.m */,
+				4204D2AF4B07221A98D4833276E5E3E9 /* NSString+LXTool.h */,
+				0F28E9B8C3A9741CBF4B84213655D260 /* NSString+LXTool.m */,
 				76661214A8B9BD3177AA1DDE646406B9 /* Pod */,
 				3384F9A8B98A36840AE017B3C7F3E222 /* Support Files */,
 			);
@@ -214,7 +214,7 @@
 				4FE99EACBA735DFEC24D26EE897AAB60 /* LXDownLoaderManager-umbrella.h in Headers */,
 				10515D3CADEE23D8ED0096673B62CC9C /* LXDownLoaderManager.h in Headers */,
 				F0FE2937CB7732240F0E4D74FCE59F5F /* LXLoaderFile.h in Headers */,
-				34B1563B2E0B9829D30D70EE6E3346CA /* NSString+MD5.h in Headers */,
+				34B1563B2E0B9829D30D70EE6E3346CA /* NSString+LXTool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +320,7 @@
 				0CCD706DE72261FF4A9FB9BC2A2877B1 /* LXDownLoaderManager-dummy.m in Sources */,
 				FE4FD6D3E220093D8231601DB856DFB2 /* LXDownLoaderManager.m in Sources */,
 				A29562C53249C6FB678A6ABBBD7D5D76 /* LXLoaderFile.m in Sources */,
-				AA6626032F102AEC1C4E8EBF65D4C331 /* NSString+MD5.m in Sources */,
+				AA6626032F102AEC1C4E8EBF65D4C331 /* NSString+LXTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

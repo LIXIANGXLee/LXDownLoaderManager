@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**状态判断枚举类型*/
 typedef NS_ENUM(NSUInteger, LXDownLoadState) {
-    LXDownLoadStatePause = 0,        // 暂停
+    LXDownLoadStatePause = 0,    // 暂停
     LXDownLoadStateDownLoading,  // 下载
     LXDownLoadStateSuccess,      // 下载成功
     LXDownLoadStateFailed        // 下载失败

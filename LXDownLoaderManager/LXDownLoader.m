@@ -8,6 +8,7 @@
 
 #import "LXDownLoader.h"
 #import "LXLoaderFile.h"
+#import "NSString+LXTool.h"
 
 @interface LXDownLoader ()<NSURLSessionDataDelegate>
 {
@@ -58,8 +59,10 @@
  */
 - (void)downLoader:(NSURL *)url {
 
-    // url 为空直接返回 不做任何处理
-    if (!url) { return; }
+    // url为空或者不是有效的http和https链接 直接返回 不做任何处理
+    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+        return;
+    }
     
     // 判断当前任务是否存在, 存在的话判断Url地址是否相等相同 再判断是否暂停状态
     if ([url isEqual: self.dataTask.originalRequest.URL]) {
@@ -69,15 +72,16 @@
             return;
         }
     }
-    
-   // 下载前 先取消上次下载（处理异常判断）
-    [self cancel];
-    
+ 
+    // 检查本地是否下载完毕
     if ([self isCheckUrlInLocal:url]) {
         self.state = LXDownLoadStateSuccess;
         return;
     }
     
+    // 下载前 先取消上次下载（处理异常判断）
+    [self cancel];
+   
     //  判断临时文件是否存在: 不存在从0字节开始请求资源
     self.downLoadingPath = [LXLoaderFile tmpPath:url];
     if (![LXLoaderFile fileExists:self.downLoadingPath]) {
@@ -102,8 +106,8 @@
 /**继续任务*/
 - (void)resume {
     if (self.dataTask && self.state == LXDownLoadStatePause) {
-        [self.dataTask resume];
         self.state = LXDownLoadStateDownLoading;
+        [self.dataTask resume];
     }
 }
 
@@ -130,14 +134,14 @@
 }
 
 - (NSString *)getLocalDownloadPath:(NSURL *)url {
-    if (!url) { return  nil; }
+    if (url.absoluteString.isEmpty) { return  nil; }
     
     self.downLoadedPath = [LXLoaderFile documentPath:url];
     return self.downLoadedPath;
 }
 
 - (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url {
-    if (!url) { return  0; }
+    if (url.absoluteString.isEmpty) { return  0; }
 
     NSString *path = [LXLoaderFile tmpPath:url];
     long long fileSize = [LXLoaderFile fileSize:path];
