@@ -59,13 +59,10 @@ typedef void(^LXStateChangeBlock) (LXDownLoadState state);
  @param url 资源路径
  */
 - (void)downLoader:(NSURL *)url;
-- (void)resume;
+- (void)resumeTask;
 
 /**暂停任务*/
-- (void)pause;
-
-/**取消任务*/
-- (void)cancel;
+- (void)pauseAndCancelTask;
 
 /**取消任务, 并清理资源*/
 - (void)cancelAndClean;
@@ -77,7 +74,7 @@ typedef void(^LXStateChangeBlock) (LXDownLoadState state);
 - (NSString *)getLocalDownloadPath:(NSURL *)url;
 
 /**获取已下载文件大小 临时文件大小 如果下载完成的 此方法获取大小为0 */
-- (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url;
+- (long long)getDownloadedLengthWithUrl:(NSURL *)url;
 
 @end
 

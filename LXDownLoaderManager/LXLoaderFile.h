@@ -58,12 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)createDirectory:(NSString *)filePath;
 
-/** 清空临时缓存*/
-+ (void)clearTmp;
-
 /** 清空下载好的资源缓存 和临时缓存*/
 + (void)clearDocument;
-
 
 @end
 

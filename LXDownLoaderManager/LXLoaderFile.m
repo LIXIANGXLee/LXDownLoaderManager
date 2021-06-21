@@ -20,7 +20,6 @@
 
 + (NSString *)documentPath:(NSURL *)url {
     if (url.absoluteString.isEmpty) { return @""; }
-    
     NSString *filePath = [DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER];
     if (![self fileExists:filePath]) {
         [self createDirectory:filePath];
@@ -30,7 +29,6 @@
 
 + (NSString *)tmpPath:(NSURL *)url {
     if (url.absoluteString.isEmpty) { return @""; }
-
     NSString *filePath = [[DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER]
                           stringByAppendingPathComponent:TEMSUBPATH];
     if (![self fileExists:filePath]) {
@@ -41,7 +39,6 @@
 
 + (BOOL)fileExists:(NSString *)filePath {
     if (filePath.isEmpty) { return NO; }
-
     return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
 
@@ -49,7 +46,6 @@
     if (![self fileExists:filePath]) {
         return 0;
     }
-    
     NSDictionary *fileInfo = [[NSFileManager defaultManager]
                               attributesOfItemAtPath:filePath error:nil];
     return [fileInfo[NSFileSize] longLongValue];
@@ -60,7 +56,6 @@
     if (![self fileSize:fromPath]) {
         return;
     }
-    
     [[NSFileManager defaultManager] moveItemAtPath:fromPath
                                             toPath:toPath error:nil];
 }
@@ -76,19 +71,10 @@
         NSLog(@"创建文件目录失败");
         return ;
     }
-
     BOOL isDir = NO;
     BOOL existed = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir];
     if (!(isDir && existed)) {
         [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-}
-
-+ (void)clearTmp {
-    NSString *filePath = [[DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER]
-                          stringByAppendingPathComponent:@"tempIosFile"];
-    if ([self fileExists:filePath]) {
-        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
     }
 }
 

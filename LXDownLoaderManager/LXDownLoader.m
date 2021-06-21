@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSOutputStream *outputStream;
 /** 当前下载任务 */
 @property (nonatomic, weak) NSURLSessionDataTask *dataTask;
+@property (nonatomic, strong) NSURL *url;
 
 @end
 
@@ -64,13 +65,18 @@
         return;
     }
     
+    /// 保存原Url
+    self.url = url;
+    
+    // 重置一下状态
+    if (self.state == LXDownLoadStateFailed) {
+        self.state = LXDownLoadStatePause;
+    }
+    
     // 判断当前任务是否存在, 存在的话判断Url地址是否相等相同 再判断是否暂停状态
-    if ([url isEqual: self.dataTask.originalRequest.URL]) {
-        // 判断当前的状态, 如果是暂停状态
-        if (self.state == LXDownLoadStatePause) {
-            [self resume];
-            return;
-        }
+    if (url && self.dataTask && self.state == LXDownLoadStatePause) {
+        [self.dataTask resume];
+         return;
     }
  
     // 检查本地是否下载完毕
@@ -80,11 +86,14 @@
     }
     
     // 下载前 先取消上次下载（处理异常判断）
-    [self cancel];
-   
+    if (self.state == LXDownLoadStateDownLoading && self.dataTask) {
+        [self.dataTask cancel];
+    }
+    
     //  判断临时文件是否存在: 不存在从0字节开始请求资源
     self.downLoadingPath = [LXLoaderFile tmpPath:url];
     if (![LXLoaderFile fileExists:self.downLoadingPath]) {
+        _tmpSize = 0;
         // 从0字节开始请求资源
         [self downLoadWithURL:url offset:0];
         return;
@@ -96,40 +105,35 @@
 }
 
 /**暂停任务*/
-- (void)pause {
+- (void)pauseAndCancelTask {
     if (self.state == LXDownLoadStateDownLoading) {
         self.state = LXDownLoadStatePause;
-        [self.dataTask suspend];
+        if (self.dataTask) {
+            [self.dataTask cancel];
+        }
     }
 }
 
 /**继续任务*/
-- (void)resume {
-    if (self.dataTask && self.state == LXDownLoadStatePause) {
+- (void)resumeTask {
+    if (self.state == LXDownLoadStatePause || self.state == LXDownLoadStateFailed) {
         self.state = LXDownLoadStateDownLoading;
-        [self.dataTask resume];
+        if (self.url) {
+            [self downLoader:self.url];
+        }
     }
-}
-
-/**取消当前任务*/
-- (void)cancel {
-    self.state = LXDownLoadStatePause;
-    [self.session invalidateAndCancel];
-    self.session = nil;
 }
 
 /**取消任务, 并清理资源*/
 - (void)cancelAndClean {
-    [self cancel];
+    [self pauseAndCancelTask];
     [LXLoaderFile removeFile:self.downLoadingPath];
 }
 
 - (BOOL)isCheckUrlInLocal:(NSURL *)url {
-    
     if (![self getLocalDownloadPath:url]) {
         return  NO;
     }
-    
     return [LXLoaderFile fileExists:self.downLoadedPath];
 }
 
@@ -140,7 +144,7 @@
     return self.downLoadedPath;
 }
 
-- (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url {
+- (long long)getDownloadedLengthWithUrl:(NSURL *)url {
     if (url.absoluteString.isEmpty) { return  0; }
 
     NSString *path = [LXLoaderFile tmpPath:url];
@@ -194,8 +198,7 @@
     
     self.state = LXDownLoadStateDownLoading;
     // 继续接受数据
-    self.outputStream = [NSOutputStream outputStreamToFileAtPath:self.downLoadingPath
-                                                          append:YES];
+    self.outputStream = [NSOutputStream outputStreamToFileAtPath:self.downLoadingPath append:YES];
     [self.outputStream open];
     completionHandler(NSURLSessionResponseAllow);
     
@@ -206,13 +209,11 @@
     // 这就是当前已经下载的大小
     _tmpSize += data.length;
     self.progress =  1.0 * _tmpSize / _totalSize;
-    
     // 往输出流中写入数据
     [self.outputStream write:data.bytes maxLength:data.length];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
-    
     if (error == nil) {
         // 下载完成 但不一定下载成功 只有临时文件和资源文件大小相等 才算成功
         if ([LXLoaderFile fileSize:self.downLoadingPath] == _tmpSize) {
@@ -220,7 +221,7 @@
             self.state = LXDownLoadStateSuccess;
         }else {  // 失败
             self.state = LXDownLoadStateFailed;
-            [LXLoaderFile removeFile:self.downLoadingPath];
+//            [LXLoaderFile removeFile:self.downLoadingPath];
         }
     }else {
         // 取消
@@ -228,6 +229,7 @@
             self.state = LXDownLoadStatePause;
         }else { // 断网
             self.state = LXDownLoadStateFailed;
+//            [LXLoaderFile removeFile:self.downLoadingPath];
             if (self.faildBlock) {
                 self.faildBlock(error);
             }
@@ -236,11 +238,9 @@
     [self.outputStream close];
 }
 
-
 #pragma mark - 私有方法
 /**
  根据开始字节, 请求资源
- 
  @param url url
  @param offset 开始字节
  */
@@ -251,8 +251,8 @@
     [request setValue:[NSString stringWithFormat:@"bytes=%lld-", offset] forHTTPHeaderField:@"Range"];
     // session 分配的task, 默认情况, 挂起状态
     self.dataTask = [self.session dataTaskWithRequest:request];
-    [self resume];
-    
+    [self.dataTask resume];
+
 }
 
 #pragma mark - 懒加载
@@ -268,7 +268,6 @@
     return _session;
 }
 
-
 #pragma mark - 事件/数据传递
 - (void)setState:(LXDownLoadState)state {
     // 数据过滤（状态不变 则不需要处理）
@@ -283,6 +282,11 @@
     
     //成功回调
     if (_state == LXDownLoadStateSuccess && self.successBlock) {
+        if (self.session) {
+            [self pauseAndCancelTask];
+            [self.session invalidateAndCancel];
+            self.session = nil;
+        }
         self.successBlock(self.downLoadedPath);
     }
 }

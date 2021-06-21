@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "LXDownLoaderManager"
-  spec.version      = "4.0.0"
+  spec.version      = "5.0.0"
   spec.summary      = "LXDownLoaderManager."
 
   # This description is used to generate tags and improve search results.
@@ -95,9 +95,8 @@ Pod::Spec.new do |spec|
 
    spec.source_files  = "LXDownLoaderManager/*.{h,m}"
    spec.public_header_files = "LXDownLoaderManager/LXDownLoaderManager.h",
-                              "LXDownLoaderManager/LXDownLoader.h",
-                              "LXDownLoaderManager/LXLoaderFile.h"
-
+                              "LXDownLoaderManager/LXDownLoader.h"
+                              
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the

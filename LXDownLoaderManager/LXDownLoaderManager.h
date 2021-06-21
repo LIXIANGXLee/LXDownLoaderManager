@@ -57,6 +57,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**继续下载全部任务*/
 - (void)resumeAll;
 
+/** 清空缓存和下载任务*/
+- (void)clearAllDocumentAndLoader;
+
 /**设置最大并发数 建议不要太大*/
 -(void)setMaxConcurrentCount:(int)count;
 
@@ -67,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)getLocalDownloadPath:(NSURL *)url;
 
 /**获取已下载文件大小 临时文件大小 如果下载完成的 此方法获取大小为0 */
-- (NSInteger)getDownloadedLengthWithUrl:(NSURL *)url;
+- (long long)getDownloadedLengthWithUrl:(NSURL *)url;
 
 @end
 
