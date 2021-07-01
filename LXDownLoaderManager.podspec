@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "LXDownLoaderManager"
-  spec.version      = "5.0.0"
+  spec.version      = "5.1.0"
   spec.summary      = "LXDownLoaderManager."
 
   # This description is used to generate tags and improve search results.

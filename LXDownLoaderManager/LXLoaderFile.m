@@ -19,7 +19,7 @@
 @implementation LXLoaderFile
 
 + (NSString *)documentPath:(NSURL *)url {
-    if (url.absoluteString.isEmpty) { return @""; }
+    if (LX_OBJC_ISEMPTY(url.absoluteString)) { return @""; }
     NSString *filePath = [DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER];
     if (![self fileExists:filePath]) {
         [self createDirectory:filePath];
@@ -28,7 +28,7 @@
 }
 
 + (NSString *)tmpPath:(NSURL *)url {
-    if (url.absoluteString.isEmpty) { return @""; }
+    if (LX_OBJC_ISEMPTY(url.absoluteString)) { return @""; }
     NSString *filePath = [[DIRECTORIESPATH stringByAppendingPathComponent:BUNDLEIDENTIFIER]
                           stringByAppendingPathComponent:TEMSUBPATH];
     if (![self fileExists:filePath]) {
@@ -38,7 +38,7 @@
 }
 
 + (BOOL)fileExists:(NSString *)filePath {
-    if (filePath.isEmpty) { return NO; }
+    if (LX_OBJC_ISEMPTY(filePath)) { return NO; }
     return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
 
@@ -67,7 +67,7 @@
 }
 
 + (void)createDirectory:(NSString *)filePath {
-    if (filePath.isEmpty) {
+    if (LX_OBJC_ISEMPTY(filePath)) {
         NSLog(@"创建文件目录失败");
         return ;
     }

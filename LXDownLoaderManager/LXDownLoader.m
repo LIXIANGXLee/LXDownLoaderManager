@@ -61,7 +61,7 @@
 - (void)downLoader:(NSURL *)url {
 
     // url为空或者不是有效的http和https链接 直接返回 不做任何处理
-    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+    if (LX_OBJC_ISEMPTY(url.absoluteString) || !url.absoluteString.isValidURL) {
         return;
     }
     
@@ -138,14 +138,14 @@
 }
 
 - (NSString *)getLocalDownloadPath:(NSURL *)url {
-    if (url.absoluteString.isEmpty) { return  nil; }
+    if (LX_OBJC_ISEMPTY(url.absoluteString)) { return  nil; }
     
     self.downLoadedPath = [LXLoaderFile documentPath:url];
     return self.downLoadedPath;
 }
 
 - (long long)getDownloadedLengthWithUrl:(NSURL *)url {
-    if (url.absoluteString.isEmpty) { return  0; }
+    if (LX_OBJC_ISEMPTY(url.absoluteString)) { return  0; }
 
     NSString *path = [LXLoaderFile tmpPath:url];
     long long fileSize = [LXLoaderFile fileSize:path];

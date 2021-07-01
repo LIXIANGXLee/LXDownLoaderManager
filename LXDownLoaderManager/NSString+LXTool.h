@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define LX_OBJC_ISEMPTY(objc) (objc == nil || [objc isEqual:[NSNull null]])
+
 @interface NSString (MD5)
 
 /**扩展 MD5*/
@@ -17,9 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**检查是否是有效的http或者https链接*/
 - (BOOL)isValidURL;
-
-/**检查字符串是否为空*/
-- (BOOL)isEmpty;
 
 @end
 

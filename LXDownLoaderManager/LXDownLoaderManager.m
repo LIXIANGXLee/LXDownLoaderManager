@@ -66,7 +66,7 @@ static LXDownLoaderManager *_shareInstance;
             failed:(LXFailedBlock)failedBlock{
     
     // url为空或者不是有效的http和https链接 直接返回 不做任何处理
-    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+    if (LX_OBJC_ISEMPTY(url.absoluteString) || !url.absoluteString.isValidURL) {
         return;
     }
     
@@ -100,19 +100,22 @@ static LXDownLoaderManager *_shareInstance;
 }
 
 - (void)pauseWithURL:(NSURL *)url {
-    [self downLoaderWithURL:url handleComplete:^(LXDownLoader * _Nullable downLoader) {
+    [self downLoaderWithURL:url
+             handleComplete:^(LXDownLoader * _Nullable downLoader) {
         if (downLoader) { [downLoader pauseAndCancelTask]; }
     }];
 }
 
 - (void)resumeWithURL:(NSURL *)url {
-    [self downLoaderWithURL:url handleComplete:^(LXDownLoader * _Nullable downLoader) {
+    [self downLoaderWithURL:url
+             handleComplete:^(LXDownLoader * _Nullable downLoader) {
         if (downLoader) { [downLoader resumeTask]; }
     }];
 }
 
 - (void)cancelWithURL:(NSURL *)url {
-    [self downLoaderWithURL:url handleComplete:^(LXDownLoader * _Nullable downLoader) {
+    [self downLoaderWithURL:url
+             handleComplete:^(LXDownLoader * _Nullable downLoader) {
         if (downLoader) { [downLoader pauseAndCancelTask]; }
     }];
 }
@@ -120,7 +123,7 @@ static LXDownLoaderManager *_shareInstance;
 - (void)downLoaderWithURL:(NSURL *)url
            handleComplete:(void(^)(LXDownLoader * _Nullable downLoader))handleComplete {
     // url为空或者不是有效的http和https链接 直接返回 不做任何处理
-    if (url.absoluteString.isEmpty || !url.absoluteString.isValidURL) {
+    if (LX_OBJC_ISEMPTY(url.absoluteString) || !url.absoluteString.isValidURL) {
         if (handleComplete) { handleComplete(nil); }
     }
     NSString *urlMD5 = [url.absoluteString lx_md5];
@@ -131,13 +134,17 @@ static LXDownLoaderManager *_shareInstance;
 }
 
 - (void)pauseAll {
-    [self.downLoads enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, LXDownLoader *downLoader, BOOL * _Nonnull stop) {
+    [self.downLoads enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key,
+                                                        LXDownLoader *downLoader,
+                                                        BOOL * _Nonnull stop) {
         [downLoader pauseAndCancelTask];
     }];
 }
 
 - (void)resumeAll {
-    [self.downLoads enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, LXDownLoader *downLoader, BOOL * _Nonnull stop) {
+    [self.downLoads enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key,
+                                                        LXDownLoader *downLoader,
+                                                        BOOL * _Nonnull stop) {
         [downLoader resumeTask];
     }];
 }
@@ -167,7 +174,9 @@ static LXDownLoaderManager *_shareInstance;
 }
 
 - (void)clearAllDocumentAndLoader {
-    [self.downLoads enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, LXDownLoader *downLoader, BOOL * _Nonnull stop) {
+    [self.downLoads enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key,
+                                                        LXDownLoader *downLoader,
+                                                        BOOL * _Nonnull stop) {
         [downLoader pauseAndCancelTask];
     }];
     

@@ -13,7 +13,7 @@
 /// md5转换
 - (NSString *)lx_md5 {
     
-    if (self.isEmpty) { return @""; }
+    if (LX_OBJC_ISEMPTY(self)) { return @""; }
     
     const char *data = self.UTF8String;
     unsigned char md[CC_MD5_DIGEST_LENGTH];
@@ -28,8 +28,7 @@
 }
 
 - (BOOL)isValidURL {
-    
-    if (self.isEmpty) { return NO; }
+    if (LX_OBJC_ISEMPTY(self)) { return NO; }
     
     NSString *pattern = @"http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?";
     NSRegularExpression *regex = [[NSRegularExpression alloc]
@@ -37,16 +36,6 @@
     NSArray *regexArray = [regex matchesInString:self options:0
                                            range:NSMakeRange(0, self.length)];
     return (regexArray.count > 0) ;
-}
-
-- (BOOL)isEmpty {
-    if (self == nil ||
-        [self isEqual:[NSNull null]] ||
-        self.length == 0) {
-        return YES;
-    } else {
-        return NO;
-    }
 }
 
 @end
