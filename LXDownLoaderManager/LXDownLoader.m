@@ -221,7 +221,10 @@
             self.state = LXDownLoadStateSuccess;
         }else {  // 失败
             self.state = LXDownLoadStateFailed;
-//            [LXLoaderFile removeFile:self.downLoadingPath];
+            [LXLoaderFile removeFile:self.downLoadingPath];
+            if (self.faildBlock) {
+                self.faildBlock(nil);
+            }
         }
     }else {
         // 取消

@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, LXDownLoadState) {
 typedef void(^LXDownLoadInfoBlock) (long long totalSize);
 typedef void(^LXProgressBlock) (float progress);
 typedef void(^LXSuccessBlock) (NSString *filePath);
-typedef void(^LXFailedBlock) (NSError *error);
+typedef void(^LXFailedBlock) (NSError * _Nullable error);
 typedef void(^LXStateChangeBlock) (LXDownLoadState state);
 
 @interface LXDownLoader : NSObject
