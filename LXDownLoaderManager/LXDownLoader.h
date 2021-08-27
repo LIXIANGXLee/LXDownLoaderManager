@@ -65,7 +65,7 @@ typedef void(^LXStateChangeBlock) (LXDownLoadState state);
 - (void)pauseAndCancelTask;
 
 /**取消任务, 并清理资源*/
-- (void)cancelAndClean;
+- (void)cancelAndClean:(NSURL *)url;
 
 /**检查资源是否已经下载到本地了*/
 - (BOOL)isCheckUrlInLocal:(NSURL *)url;

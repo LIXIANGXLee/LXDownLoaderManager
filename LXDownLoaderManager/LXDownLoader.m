@@ -125,9 +125,15 @@
 }
 
 /**取消任务, 并清理资源*/
-- (void)cancelAndClean {
+- (void)cancelAndClean:(NSURL *)url {
     [self pauseAndCancelTask];
-    [LXLoaderFile removeFile:self.downLoadingPath];
+    
+    NSString *filepathed = [LXLoaderFile documentPath:url];
+    NSString *filepathing = [LXLoaderFile tmpPath:url];
+
+    [LXLoaderFile removeFile:filepathed];
+    [LXLoaderFile removeFile:filepathing];
+
 }
 
 - (BOOL)isCheckUrlInLocal:(NSURL *)url {
